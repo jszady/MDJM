@@ -1,0 +1,43 @@
+import { createMetadata } from "@/lib/metadata";
+import { HomeHero } from "@/components/sections/home-hero";
+import { ServiceGrid } from "@/components/sections/service-grid";
+import { WhyMjdm } from "@/components/sections/why-mjdm";
+import { ProcessTimeline } from "@/components/sections/process-timeline";
+import { CaseStudyGrid } from "@/components/sections/case-study-grid";
+import { IndustriesBand } from "@/components/sections/industries-band";
+import { TestimonialsStrip } from "@/components/sections/testimonials-strip";
+import { BlogPreview } from "@/components/sections/blog-preview";
+import { CtaBanner } from "@/components/sections/cta-banner";
+
+export const metadata = createMetadata({
+  title: "Premium Websites, SEO & Social Growth Agency",
+  description:
+    "MJDM builds high-conversion websites, premium digital brands, and growth systems across web, SEO, and social media.",
+  path: "/",
+  keywords: [
+    "web design agency",
+    "web development agency",
+    "SEO agency",
+    "social media management agency",
+    "creative digital agency"
+  ]
+});
+
+export default function HomePage() {
+  return (
+    <>
+      <HomeHero />
+      <ServiceGrid className="pt-10 sm:pt-14 lg:pt-16" />
+      <WhyMjdm />
+      <ProcessTimeline />
+      <CaseStudyGrid limit={3} />
+      <IndustriesBand />
+      <TestimonialsStrip />
+      <BlogPreview />
+      <CtaBanner
+        title="If your digital presence feels behind your ambition, MJDM fixes that."
+        description="Whether you need a stronger website, sharper content, better search visibility, or a more complete brand system, MJDM builds digital presence that feels current and converts harder."
+      />
+    </>
+  );
+}

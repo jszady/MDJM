@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#040816"/>
+  <circle cx="212" cy="148" r="180" fill="#7C3AED" fill-opacity="0.22"/>
+  <circle cx="970" cy="150" r="170" fill="#06B6D4" fill-opacity="0.18"/>
+  <circle cx="670" cy="510" r="210" fill="#EC4899" fill-opacity="0.16"/>
+  <rect x="74" y="72" width="1052" height="486" rx="40" fill="white" fill-opacity="0.03" stroke="white" stroke-opacity="0.12"/>
+  <text x="112" y="230" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" letter-spacing="8">MJDM</text>
+  <text x="112" y="332" fill="white" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="700">Build the presence</text>
+  <text x="112" y="418" fill="url(#title)" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="700">people remember.</text>
+  <text x="112" y="490" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="28">Premium web design, development, SEO, content, and social growth for modern businesses.</text>
+  <defs>
+    <linearGradient id="title" x1="112" y1="350" x2="730" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0ABFC"/>
+      <stop offset="0.5" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+</svg>

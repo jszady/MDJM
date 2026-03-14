@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg-900: #030712;
+  --bg-800: #060b18;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --line: rgba(255, 255, 255, 0.1);
+  --cyan: #67e8f9;
+  --violet: #8b5cf6;
+  --pink: #ec4899;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.22), transparent 20%),
+    radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.14), transparent 22%),
+    radial-gradient(circle at 50% 24%, rgba(236, 72, 153, 0.12), transparent 18%),
+    linear-gradient(180deg, #040816 0%, #060b18 38%, #030712 100%);
+  color: var(--text-main);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #fff;
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.075;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: radial-gradient(circle at center, black, transparent 82%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-surface {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.015);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 25px 90px rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.section-surface::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto auto -15%;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.22), transparent 70%);
+  filter: blur(40px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.section-surface::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -20% auto;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18), transparent 68%);
+  filter: blur(44px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black 36%, transparent 88%);
+}
+
+.hero-depth-gradient {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(168, 85, 247, 0.18), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(34, 211, 238, 0.14), transparent 26%),
+    radial-gradient(circle at 52% 82%, rgba(236, 72, 153, 0.1), transparent 24%);
+  animation: hero-gradient-drift 22s ease-in-out infinite alternate;
+  will-change: transform, opacity, filter;
+}
+
+.hero-depth-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 20% 10%, rgba(103, 232, 249, 0.08), transparent 24%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08), transparent 26%);
+  background-size: 118px 118px, 118px 118px, 100% 100%, 100% 100%;
+  animation: hero-grid-drift 26s ease-in-out infinite alternate;
+  will-change: transform, opacity, filter, background-position;
+}
+
+.hero-depth-particle {
+  opacity: 0.45;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-depth-gradient,
+  .hero-depth-grid,
+  .hero-depth-particle {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+.service-card {
+  transition:
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 28px 90px rgba(2, 6, 23, 0.42),
+    0 0 0 1px rgba(103, 232, 249, 0.08),
+    0 0 42px rgba(168, 85, 247, 0.12);
+}
+
+@keyframes hero-gradient-drift {
+  0% {
+    transform: translate3d(-1%, -1.5%, 0) scale(1);
+    opacity: 0.72;
+    filter: saturate(100%);
+  }
+
+  50% {
+    transform: translate3d(1.5%, 1%, 0) scale(1.03);
+    opacity: 0.88;
+    filter: saturate(112%);
+  }
+
+  100% {
+    transform: translate3d(0.5%, -1%, 0) scale(1.015);
+    opacity: 0.78;
+    filter: saturate(104%);
+  }
+}
+
+@keyframes hero-grid-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.26;
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  50% {
+    transform: translate3d(0, -1.5%, 0) scale(1.01);
+    opacity: 0.36;
+    background-position:
+      14px -12px,
+      -14px 12px,
+      4% 0%,
+      96% 10%;
+  }
+
+  100% {
+    transform: translate3d(0, 1%, 0) scale(1.015);
+    opacity: 0.3;
+    background-position:
+      24px -18px,
+      -24px 18px,
+      6% 4%,
+      92% 14%;
+  }
+}
+
+.glow-text {
+  text-shadow:
+    0 0 24px rgba(139, 92, 246, 0.2),
+    0 0 50px rgba(34, 211, 238, 0.08);
+}
+
+.gradient-text {
+  background-image: linear-gradient(120deg, #f5d0fe 10%, #c4b5fd 46%, #67e8f9 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heading-xl {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  font-weight: 650;
+}
+
+.soft-outline {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
