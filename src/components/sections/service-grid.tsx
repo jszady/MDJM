@@ -71,7 +71,7 @@ export function ServiceGrid({ compact = false, className }: ServiceGridProps) {
                   </div>
                   <div className="mt-auto pt-6">
                     <Link
-                      href={`/services#${service.slug}`}
+                      href={`/services/${service.slug}`}
                       className="inline-flex items-center gap-2 text-sm font-semibold text-white transition duration-300 group-hover:gap-3 group-hover:text-cyan-300"
                     >
                       Explore service

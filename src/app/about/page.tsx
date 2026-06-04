@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { createMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHero } from "@/components/shared/page-hero";
@@ -46,7 +48,7 @@ const approach = [
 ];
 
 export const metadata = createMetadata({
-  title: "About",
+  title: "About MJDM — Premium Web Design & Growth Agency",
   description:
     "Learn how MJDM approaches premium design, digital growth, content systems, and conversion-focused execution for modern businesses.",
   path: "/about",
@@ -192,6 +194,29 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
+      </SectionShell>
+
+      <SectionShell id="team" className="!py-16 sm:!py-20">
+        <Reveal blur>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">MJDM Team</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Editorial and strategy from the people shipping the work.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-300">
+              Insights on the MJDM journal are published under the{" "}
+              <span className="font-semibold text-white">MJDM Team</span> byline—written by strategists, designers, and
+              growth leads who lead client delivery. The same team you brief on projects shapes the guidance you read
+              here.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+            >
+              Work with MJDM →
+            </Link>
+          </div>
+        </Reveal>
       </SectionShell>
 
       <CtaBanner

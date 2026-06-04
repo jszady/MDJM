@@ -97,6 +97,7 @@ select {
   filter: blur(40px);
   opacity: 0.55;
   pointer-events: none;
+  transition: opacity 500ms ease-out;
 }
 
 .section-surface::after {
@@ -110,6 +111,16 @@ select {
   filter: blur(44px);
   opacity: 0.6;
   pointer-events: none;
+  transition: opacity 500ms ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-surface:hover::before {
+    opacity: 0.65;
+  }
+  .section-surface:hover::after {
+    opacity: 0.72;
+  }
 }
 
 .hero-grid {
@@ -151,6 +162,9 @@ select {
   .hero-depth-particle {
     animation: none;
     will-change: auto;
+  }
+  .service-card:hover {
+    transform: none;
   }
 }
 
@@ -237,6 +251,19 @@ select {
   color: transparent;
 }
 
+.logo-wordmark {
+  background: linear-gradient(90deg, #7c5cff 0%, #00e5ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 12px rgba(124, 92, 255, 0.2)) drop-shadow(0 0 24px rgba(0, 229, 255, 0.08));
+  transition: filter 0.25s ease;
+}
+
+.group:hover .logo-wordmark {
+  filter: brightness(1.08) drop-shadow(0 0 16px rgba(124, 92, 255, 0.28)) drop-shadow(0 0 32px rgba(0, 229, 255, 0.12));
+}
+
 .heading-xl {
   font-size: clamp(3.5rem, 8vw, 7.5rem);
   line-height: 0.93;
@@ -255,4 +282,50 @@ select {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
     0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.article-section-divider {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(103, 232, 249, 0.15) 20%,
+    rgba(139, 92, 246, 0.2) 50%,
+    rgba(236, 72, 153, 0.15) 80%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: article-divider-shimmer 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-section-divider {
+    animation: none;
+  }
+}
+
+@keyframes article-divider-shimmer {
+  0%,
+  100% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.article-heading2-gradient {
+  background: linear-gradient(135deg, #e9d5ff 0%, #c4b5fd 35%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+}
+
+.article-heading2-underline {
+  display: block;
+  height: 2px;
+  width: 3rem;
+  margin-top: 0.75rem;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.6), rgba(103, 232, 249, 0.4));
+  border-radius: 1px;
 }

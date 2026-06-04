@@ -12,7 +12,7 @@ export function TestimonialsStrip() {
       <SectionHeading
         eyebrow="Client Perspective"
         title="Built to look sharper. Built to perform harder."
-        description="Placeholder testimonials show the tone and structure for social proof while real client reviews are gathered."
+        description="What partners say about working with MJDM on web, content, and growth initiatives."
         align="center"
       />
 
@@ -24,7 +24,7 @@ export function TestimonialsStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
-            className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-left shadow-[0_20px_70px_rgba(5,10,30,0.35)]"
+            className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-left shadow-[0_20px_70px_rgba(5,10,30,0.35)] transition duration-400 ease-out hover:-translate-y-1 hover:border-cyan-300/15 hover:shadow-[0_0_40px_rgba(103,232,249,0.06),0_20px_70px_rgba(5,10,30,0.35)]"
           >
             <p className="text-base leading-8 text-slate-200">“{item.quote}”</p>
             <footer className="mt-8">

@@ -8,7 +8,7 @@ import { SectionShell } from "@/components/ui/section-shell";
 import { siteConfig } from "@/data/site";
 
 export const metadata = createMetadata({
-  title: "Contact",
+  title: "Get in Touch — Start Your Web or Growth Project",
   description:
     "Contact MJDM to discuss web design, web development, SEO, social media management, content production, or a full digital growth project.",
   path: "/contact",
@@ -25,11 +25,11 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="If your current presence undersells the business, this is where that changes."
-        description="Tell MJDM what you are building, where the brand feels behind, and what kind of support would create the strongest next step. The conversation is designed to be clear, direct, and commercially useful."
+        title="Start Your Next Project With MJDM"
+        description="Tell us what you are building, where the brand feels behind, and what a strong next quarter looks like. After you submit the form, MJDM reviews your goals and replies with a practical next step—whether that is a scoping call, a short proposal outline, or a clear recommendation if we are not the right fit."
         primaryCta={{ label: "Request a Response", href: "#contact-form" }}
         secondaryCta={{ label: "Email MJDM", href: `mailto:${siteConfig.email}` }}
-        featureChips={["Fast response", "Strategy-led conversation", "Premium growth support"]}
+        featureChips={["We respond within 24 hours", "No-obligation consultation", "Strategy-led conversation"]}
         spotlight={{
           label: "Why Reach Out",
           title: "Start with clarity, not a vague sales process.",
@@ -50,6 +50,17 @@ export default function ContactPage() {
         ]}
       />
 
+      <SectionShell className="!py-10">
+        <div className="mx-auto max-w-3xl rounded-[1.5rem] border border-white/10 bg-white/[0.03] px-6 py-6 text-center sm:px-8">
+          <p className="text-sm font-medium uppercase tracking-[0.28em] text-cyan-300/85">What happens next</p>
+          <p className="mt-3 text-base leading-7 text-slate-300">
+            You will receive a personal response within <span className="text-white">24 hours</span> on business
+            days. There is <span className="text-white">no obligation</span>—just a focused review of your brief and
+            the most sensible way to move forward with web, SEO, social, or a combined programme.
+          </p>
+        </div>
+      </SectionShell>
+
       <SectionShell id="contact-form" className="pt-4">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal blur>
@@ -69,16 +80,18 @@ export default function ContactPage() {
                       href={`mailto:${siteConfig.email}`}
                       className="group flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-cyan-300/40 hover:shadow-[0_0_30px_rgba(103,232,249,0.1)]"
                     >
-                      <Mail className="h-5 w-5 text-cyan-300" />
+                      <Mail className="h-5 w-5 text-cyan-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
                       <span>{siteConfig.email}</span>
                     </a>
-                    <a
-                      href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
-                      className="group flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-fuchsia-300/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.1)]"
-                    >
-                      <PhoneCall className="h-5 w-5 text-fuchsia-300" />
-                      <span>{siteConfig.phone}</span>
-                    </a>
+                    {siteConfig.phone ? (
+                      <a
+                        href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
+                        className="group flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-fuchsia-300/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.1)]"
+                      >
+                        <PhoneCall className="h-5 w-5 text-fuchsia-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
+                        <span>{siteConfig.phone}</span>
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -107,9 +120,10 @@ export default function ContactPage() {
                   Delivery Note
                 </p>
                 <p className="mt-4">
-                  The contact form already posts to an internal API route and is ready to connect
-                  to MJDM&apos;s workflow through SMTP, Resend, or another email provider once
-                  credentials are added.
+                  Submissions are sent securely via Resend when{" "}
+                  <span className="font-mono text-slate-200">RESEND_API_KEY</span> is configured on
+                  the server. Use a verified{" "}
+                  <span className="font-mono text-slate-200">RESEND_FROM_EMAIL</span> in production.
                 </p>
               </div>
             </Reveal>

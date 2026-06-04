@@ -7,13 +7,15 @@ type MetadataInput = {
   description: string;
   path?: string;
   keywords?: string[];
+  openGraphType?: "website" | "article";
 };
 
 export function createMetadata({
   title,
   description,
   path = "",
-  keywords = []
+  keywords = [],
+  openGraphType = "website"
 }: MetadataInput): Metadata {
   return {
     title,
@@ -28,10 +30,10 @@ export function createMetadata({
       url: absoluteUrl(path),
       siteName: "MJDM",
       locale: "en_GB",
-      type: "website",
+      type: openGraphType,
       images: [
         {
-          url: absoluteUrl("/og-image.svg"),
+          url: absoluteUrl("/og-image.png"),
           width: 1200,
           height: 630,
           alt: "MJDM digital agency"
@@ -42,7 +44,7 @@ export function createMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/og-image.svg")]
+      images: [absoluteUrl("/og-image.png")]
     }
   };
 }

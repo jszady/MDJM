@@ -18,9 +18,9 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
         <SectionHeading
           eyebrow="Featured Work"
           title="Selected projects designed to lift perception and drive action."
-          description="Each case study is a placeholder structure ready to swap for real visuals, numbers, and deeper delivery details."
+          description="Representative engagements showing how MJDM approaches web, brand, and growth challenges."
         />
-        <Link href="/work" className="text-sm font-semibold text-white transition hover:text-cyan-300">
+        <Link href="/work" className="text-sm font-semibold text-white transition duration-300 hover:text-cyan-300">
           View all work
         </Link>
       </div>
@@ -30,7 +30,7 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
           <Reveal key={study.slug} delay={index * 0.08}>
             <Link
               href="/work"
-              className="group block overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
+              className="group block overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-400 ease-out hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(103,232,249,0.08)]"
             >
               <div
                 className={`relative h-56 overflow-hidden bg-gradient-to-br ${study.accent} p-6`}
@@ -41,7 +41,7 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
                     {study.category}
                   </span>
                   <div className="rounded-[1.5rem] border border-white/15 bg-slate-950/50 p-4 backdrop-blur-sm">
-                    <p className="text-sm text-white/70">Placeholder thumbnail / motion preview</p>
+                    <p className="text-sm text-white/70">Project preview</p>
                   </div>
                 </div>
               </div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl("/og-image.svg"),
+        url: absoluteUrl("/og-image.png"),
         width: 1200,
         height: 630,
         alt: "MJDM agency preview"
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MJDM | Premium Web Design, Development & Growth Agency",
     description: siteConfig.longDescription,
-    images: [absoluteUrl("/og-image.svg")]
+    images: [absoluteUrl("/og-image.png")]
   }
 };
 
@@ -54,7 +54,10 @@ const organizationSchema = {
   logo: "https://www.mjdm.agency/icon.svg",
   description: siteConfig.longDescription,
   email: siteConfig.email,
-  sameAs: siteConfig.socialLinks.map((link) => link.href),
+  ...(siteConfig.socialLinks.length
+    ? { sameAs: siteConfig.socialLinks.map((link) => link.href) }
+    : {}),
+  ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
   areaServed: ["United Kingdom", "United States", "Canada", "Worldwide"]
 };
 

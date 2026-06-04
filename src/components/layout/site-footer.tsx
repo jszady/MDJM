@@ -12,13 +12,15 @@ export function SiteFooter() {
         <div className="space-y-5">
           <Logo />
           <p className="max-w-sm text-sm leading-7 text-slate-300">{siteConfig.longDescription}</p>
-          <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-            {siteConfig.socialLinks.map((item) => (
-              <Link key={item.label} href={item.href} className="transition hover:text-white">
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          {siteConfig.socialLinks.length ? (
+            <div className="flex flex-wrap gap-4 text-sm text-slate-300">
+              {siteConfig.socialLinks.map((item) => (
+                <Link key={item.label} href={item.href} className="transition duration-300 hover:text-cyan-200/90">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         <div>
@@ -27,7 +29,7 @@ export function SiteFooter() {
           </h3>
           <div className="mt-5 grid gap-3 text-sm text-slate-300">
             {navigationLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-white">
+              <Link key={item.href} href={item.href} className="transition duration-300 hover:text-cyan-200/90">
                 {item.label}
               </Link>
             ))}
@@ -39,11 +41,11 @@ export function SiteFooter() {
             Services
           </h3>
           <div className="mt-5 grid gap-3 text-sm text-slate-300">
-            {services.slice(0, 5).map((service) => (
+            {services.map((service) => (
               <Link
                 key={service.slug}
-                href={`/services#${service.slug}`}
-                className="transition hover:text-white"
+                href={`/services/${service.slug}`}
+                className="transition duration-300 hover:text-cyan-200/90"
               >
                 {service.title}
               </Link>
@@ -56,12 +58,12 @@ export function SiteFooter() {
             Contact
           </h3>
           <div className="mt-5 grid gap-3 text-sm text-slate-300">
-            <Link href={`mailto:${siteConfig.email}`} className="transition hover:text-white">
+            <Link href={`mailto:${siteConfig.email}`} className="transition duration-300 hover:text-cyan-200/90">
               {siteConfig.email}
             </Link>
-            <p>{siteConfig.phone}</p>
+            {siteConfig.phone ? <p>{siteConfig.phone}</p> : null}
             <p>{siteConfig.headquarters}</p>
-            <Link href="/blog" className="transition hover:text-white">
+            <Link href="/blog" className="transition duration-300 hover:text-cyan-200/90">
               Insights & Journal
             </Link>
           </div>
@@ -71,7 +73,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-slate-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} MJDM. Built for brands that do not blend in.</p>
-          <p>Suggested sitemap includes core pages for services, work, blog, and conversion flows.</p>
+          <p className="lg:text-right">Web design, SEO, and social growth for ambitious brands.</p>
         </div>
       </div>
     </footer>

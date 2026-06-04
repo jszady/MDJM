@@ -5,6 +5,7 @@ import { WhyMjdm } from "@/components/sections/why-mjdm";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { CaseStudyGrid } from "@/components/sections/case-study-grid";
 import { IndustriesBand } from "@/components/sections/industries-band";
+import { TrustSignalsBand } from "@/components/sections/trust-signals-band";
 import { TestimonialsStrip } from "@/components/sections/testimonials-strip";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { CtaBanner } from "@/components/sections/cta-banner";
@@ -32,6 +33,7 @@ export default function HomePage() {
       <ProcessTimeline />
       <CaseStudyGrid limit={3} />
       <IndustriesBand />
+      <TrustSignalsBand />
       <TestimonialsStrip />
       <BlogPreview />
       <CtaBanner

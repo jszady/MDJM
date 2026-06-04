@@ -148,7 +148,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(244,232,255,0.94))] px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_40px_rgba(255,255,255,0.1),0_0_40px_rgba(236,72,153,0.18)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_55px_rgba(255,255,255,0.12),0_0_50px_rgba(236,72,153,0.24)] disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex items-center justify-center rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.95),rgba(217,70,239,0.9))] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35),0_0_60px_rgba(236,72,153,0.12)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(139,92,246,0.45),0_0_80px_rgba(236,72,153,0.2)] hover:border-violet-300/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70"
           >
             {status === "loading" ? "Sending..." : "Request a response"}
           </button>

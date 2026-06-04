@@ -15,7 +15,7 @@ export function IndustriesBand() {
           {industries.map((industry) => (
             <span
               key={industry}
-              className="rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200"
+              className="rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200 transition duration-300 hover:border-cyan-300/20 hover:bg-slate-950/85"
             >
               {industry}
             </span>

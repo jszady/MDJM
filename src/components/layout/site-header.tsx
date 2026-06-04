@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { navigationLinks } from "@/data/navigation";
-import { Logo } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button-link";
 import { cn } from "@/lib/utils";
 
@@ -17,14 +17,23 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-full border border-white/10 bg-slate-950/70 px-4 py-3 backdrop-blur-xl shadow-[0_10px_50px_rgba(5,10,30,0.45)]">
         <div className="flex items-center justify-between gap-4">
-          <Logo />
+          <Link href="/" className="flex min-w-[220px] shrink-0 items-center mr-2 lg:mr-6">
+            <Image
+              src="/mjdm-logo-final.png"
+              alt="MJDM"
+              width={220}
+              height={48}
+              priority
+              className="block h-[34px] w-auto object-contain sm:h-12"
+            />
+          </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navigationLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-300 transition hover:text-white"
+                className="text-sm font-medium text-slate-300 transition duration-300 hover:text-white"
               >
                 {item.label}
               </Link>
@@ -35,7 +44,7 @@ export function SiteHeader() {
             <ButtonLink href="/contact" variant="secondary">
               Send Inquiry
             </ButtonLink>
-            <ButtonLink href="mailto:hello@mjdm.agency" arrow>
+            <ButtonLink href="mailto:hello@mjdm.agency" variant="primaryNav" arrow>
               Book a Call
             </ButtonLink>
           </div>
@@ -65,7 +74,7 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white"
+                      "rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition duration-300 hover:bg-white/5 hover:text-white"
                     )}
                     onClick={() => setOpen(false)}
                   >
@@ -76,7 +85,7 @@ export function SiteHeader() {
                   <ButtonLink href="/contact" variant="secondary">
                     Send Inquiry
                   </ButtonLink>
-                  <ButtonLink href="mailto:hello@mjdm.agency" arrow>
+                  <ButtonLink href="mailto:hello@mjdm.agency" variant="primaryNav" arrow>
                     Book a Call
                   </ButtonLink>
                 </div>

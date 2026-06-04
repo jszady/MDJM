@@ -23,7 +23,7 @@ export function WhyMjdm() {
         <div className="grid gap-4">
           {reasons.map((reason, index) => (
             <Reveal key={reason} delay={index * 0.06} direction="right" blur>
-              <div className="section-surface rounded-[1.7rem] px-5 py-5 text-slate-200">
+              <div className="section-surface rounded-[1.7rem] px-5 py-5 text-slate-200 transition duration-400 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(103,232,249,0.06)]">
                 <span className="mr-3 inline-block min-w-8 text-cyan-300">0{index + 1}</span>
                 {reason}
               </div>

@@ -98,7 +98,7 @@ export function HomeHero() {
             </motion.p>
 
             {/* 3. Headline — staged by word, fade + upward + blur reduction */}
-            <div className="mt-7 flex flex-wrap gap-x-3 gap-y-1 text-white">
+            <h1 className="mt-7 flex flex-wrap gap-x-3 gap-y-1 text-white">
               {headlineWords.map((word, index) => (
                 <motion.span
                   key={word}
@@ -114,7 +114,7 @@ export function HomeHero() {
                   {word}
                 </motion.span>
               ))}
-            </div>
+            </h1>
 
             {/* 4. Supporting paragraph — after headline */}
             <motion.p
