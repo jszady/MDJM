@@ -6,7 +6,7 @@ import { HeroVisual } from "@/components/visuals/hero-visual";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 
-const headlineWords = ["Build", "the", "presence", "people", "remember."];
+const headlineWords = ["Toronto", "Web", "Design", "&", "Marketing", "Agency"];
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export function HomeHero() {

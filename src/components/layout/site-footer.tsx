@@ -62,7 +62,14 @@ export function SiteFooter() {
               {siteConfig.email}
             </Link>
             {siteConfig.phone ? <p>{siteConfig.phone}</p> : null}
-            <p>{siteConfig.headquarters}</p>
+            {siteConfig.address ? (
+              <p>{siteConfig.address.join(", ")}</p>
+            ) : (
+              <p>{siteConfig.headquarters}</p>
+            )}
+            {siteConfig.businessHours?.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
             <Link href="/blog" className="transition duration-300 hover:text-cyan-200/90">
               Insights & Journal
             </Link>

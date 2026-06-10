@@ -28,7 +28,7 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   "web-design": {
     metaTitle: "Web Design Agency for Service Businesses — Toronto",
     metaDescription:
-      "Premium web design in Toronto for ambitious service brands. Conversion-led UX, responsive systems, and a site that earns trust in seconds. Talk to MJDM.",
+      "Toronto web design agency for service businesses. MJDM builds credible, conversion-focused websites that reflect your positioning and drive qualified inquiries.",
     h1: "Web Design for Ambitious Service Businesses",
     intro:
       "Your website is the first place serious buyers look when they compare you to competitors. In seconds they decide whether you feel established, credible, and worth a conversation. MJDM designs websites for service businesses that cannot afford to look generic: law firms, consultancies, agencies, trades, clinics, and B2B operators who win on trust and clarity. We combine premium visual direction with conversion-led layout, messaging hierarchy, and responsive systems so your brand reads as sharp on mobile as it does on desktop. Whether you are launching a new offer, repositioning, or replacing an outdated build, our web design process is built around commercial outcomes: clearer positioning, stronger first impressions, and a smoother path from visit to inquiry.",
@@ -105,10 +105,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "web-development": {
-    metaTitle: "Web Development Agency — Fast, SEO-Ready Sites",
+    metaTitle: "Web Development Agency Toronto — Fast, SEO-Ready Sites | MJDM",
     metaDescription:
-      "Expert web development for marketing sites and landing pages: modern front-end, clean structure, performance, and SEO-friendly builds. Start with MJDM.",
-    h1: "Web Development for Performance, SEO & Scale",
+      "Fast, SEO-ready web development for Toronto businesses. MJDM builds in Next.js and modern frameworks with clean code, CMS integration, and performance optimization.",
+    h1: "Web Development for Toronto Businesses — Performance, SEO & Scale",
     intro:
       "A strong design still needs a disciplined build. MJDM develops marketing websites and high-impact landing pages with modern front-end architecture, performance in mind, and structure that search engines and marketing teams can work with. We are a strong fit when you need fast load times, maintainable components, CMS-ready patterns, and technical SEO foundations baked in—not a fragile one-off theme. Service businesses rely on their site to capture demand from search, referrals, and campaigns; we engineer the front end so those channels are not undermined by slow scripts, poor Core Web Vitals, or messy markup. From reusable sections to thoughtful state handling, the goal is simple: a site that feels premium in the browser and stays practical to evolve as your offer changes.",
     includesHeading: "What our web development service includes",
@@ -181,7 +181,7 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   seo: {
     metaTitle: "SEO Agency for Toronto Service Businesses",
     metaDescription:
-      "Toronto SEO for service businesses: technical foundations, on-page structure, and content planning to rank with intent and grow qualified leads. Work with MJDM.",
+      "SEO for Toronto service businesses. MJDM handles technical fixes, keyword strategy, on-page optimization, and local SEO — all tied to leads and pipeline growth.",
     h1: "SEO for Service Businesses That Want to Grow",
     intro:
       "Search is where high-intent buyers look when they need a provider—not a product page for shoes, but a partner for legal advice, construction, consulting, healthcare, or professional services. MJDM helps service businesses earn visibility for the queries that actually drive revenue, not vanity traffic. That means technical SEO that lets Google crawl and understand your site, on-page structure that maps pages to real search intent, and content planning that strengthens authority over time. We focus on the foundations that compound: site architecture, internal linking, page quality, and measurement—then we align recommendations with how your sales team actually wins deals. If your pipeline depends on being found when someone types “near me” or “for [industry]”, SEO should be treated as a growth system, not a monthly checklist.",
@@ -255,10 +255,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "social-media-management": {
-    metaTitle: "Social Media Management Agency",
+    metaTitle: "Social Media Management Agency Toronto | MJDM",
     metaDescription:
-      "Social media management that builds consistency and inquiries: planning, creative direction, posting, and account care for ambitious brands. Talk to MJDM.",
-    h1: "Social Media Management That Drives Real Inquiries",
+      "Social media management for Toronto service businesses. MJDM handles strategy, content creation, scheduling, and reporting so your brand stays consistent.",
+    h1: "Social Media Management for Toronto Businesses That Drives Real Inquiries",
     intro:
       "Social platforms reward consistency, clarity, and creative quality—but most service brands fall into two traps: posting sporadically with no strategy, or staying active with content that does not reflect the calibre of the business. MJDM manages social media for companies that want their feeds to feel as premium as their website: planned cadence, platform-appropriate creative direction, and messaging that supports trust and demand. We handle the operational load—calendars, posting rhythm, captions, and account hygiene—while keeping the brand voice sharp across LinkedIn, Instagram, TikTok, and other channels that matter for your audience. The point is not vanity reach; it is staying visible to buyers during long consideration cycles, warming up referrals, and creating direct paths to inquiry when intent spikes.",
     includesHeading: "What our social media management includes",
@@ -334,10 +334,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "social-media-advertising": {
-    metaTitle: "Social Media Advertising Agency",
+    metaTitle: "Social Media Advertising Agency Toronto | MJDM",
     metaDescription:
-      "Paid social campaigns built for leads and revenue: strategy, creative testing, targeting, and reporting for service brands. Scale with MJDM.",
-    h1: "Social Media Advertising for Leads, Bookings & Revenue",
+      "Paid social advertising for Toronto businesses. MJDM runs Meta and LinkedIn campaigns built around qualified leads, bookings, and measurable revenue outcomes.",
+    h1: "Social Media Advertising for Toronto Businesses — Leads, Bookings & Revenue",
     intro:
       "Organic reach alone rarely moves fast enough when you have aggressive growth targets. MJDM builds paid social advertising systems for service businesses that need predictable pipeline: campaigns structured around offers, creative testing, audience refinement, and reporting that ties spend to inquiries—not vanity impressions. We pair strong visuals with funnel-aware thinking so ads match where the buyer is in the journey, from cold awareness to retargeting people who already visited your site or engaged with your content. Whether you need Meta, LinkedIn, TikTok, or a focused mix, the objective is commercial: more qualified conversations, better cost per lead where measurable, and creative iteration that learns from real performance data—not guesses.",
     includesHeading: "What our paid social service includes",
@@ -404,10 +404,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "reels-video-production": {
-    metaTitle: "Reels & Short-Form Video Production",
+    metaTitle: "Reels & Short-Form Video Production Toronto | MJDM",
     metaDescription:
-      "Short-form video and Reels production for brands that need scroll-stopping creative: concepts, shoots, and platform-native delivery with MJDM.",
-    h1: "Reels & Short-Form Video Built for Attention and Brand",
+      "Short-form video and Reels production in Toronto. MJDM handles concept to delivery — scroll-stopping content built for your brand, not random trends.",
+    h1: "Reels & Short-Form Video Production in Toronto — Built for Attention and Brand",
     intro:
       "Short-form video is not optional for many categories anymore—it is how people discover, compare, and decide which brand feels current. MJDM plans and produces reels-style content for businesses that cannot afford amateur output: concept development, shot planning, direction, and delivery formats tuned to platform behaviour on Instagram, TikTok, and beyond. We focus on ideas that communicate your offer and credibility in the first two seconds, because that is where attention is won or lost. Production is built around efficiency for social cadence: repeatable formats, strong hooks, and brand-consistent visuals that still feel native to each platform. Whether you need a batch of concepts for the quarter or support alongside a broader social management retainer, the goal is simple: creative that stops the scroll and supports inquiries—not random trends disconnected from your positioning.",
     includesHeading: "What our reels and short-form production includes",
@@ -473,10 +473,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "video-editing": {
-    metaTitle: "Professional Video Editing for Brands",
+    metaTitle: "Professional Video Editing for Toronto Brands | MJDM",
     metaDescription:
-      "Premium video editing for social, ads, and web: tighter pacing, motion graphics, and platform-ready cuts from MJDM so your brand looks polished everywhere.",
-    h1: "Video Editing That Elevates Your Brand Story",
+      "Professional video editing for Toronto brands. MJDM handles story structure, color, sound, graphics, and multi-format delivery for marketing and social content.",
+    h1: "Video Editing for Toronto Brands — Elevate Your Brand Story",
     intro:
       "Raw footage is only potential. MJDM edits video for service brands and marketing teams that need polished output without hiring a full in-house post team: tighter pacing, modern graphics, colour consistency, and platform-ready deliverables for social, ads, webinars, and website heroes. We pay attention to the details that separate amateur from premium—sound beds, transition discipline, typography hierarchy, and cuts that respect attention spans. Whether you are repurposing long interviews into short clips, tightening a launch film, or packaging testimonial content for campaigns, editing should reinforce positioning, not distract from it. Our editors work with the same brand standards we apply to web and social creative, so your video feels coherent everywhere it appears.",
     includesHeading: "What our video editing service includes",
@@ -542,10 +542,10 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   "content-posting-account-management": {
-    metaTitle: "Content Posting & Social Account Management",
+    metaTitle: "Content Posting & Account Management Toronto | MJDM",
     metaDescription:
-      "Posting, captions, scheduling, and account care so your brand stays visible and polished week to week. Reliable operational social support from MJDM.",
-    h1: "Content Posting & Account Management That Keeps You Visible",
+      "Social media posting and account management for Toronto businesses. MJDM executes your calendar with precision — consistent, on-brand, and reported weekly.",
+    h1: "Content Posting & Account Management for Toronto Businesses",
     intro:
       "Strategy without execution is just a slide deck. MJDM provides operational support for teams that need reliable posting, clean account hygiene, and consistent execution week after week: uploads, scheduling, captions, tagging, link-in-bio maintenance, and the small details that prevent your brand from looking abandoned. This service is ideal when you already have creative direction—or periodic content production—but you lack the internal bandwidth to publish consistently across platforms. We treat posting as a system: checklists, QA, and schedules that reduce errors and last-minute scrambles. For service businesses, consistency signals professionalism. When prospects compare you to competitors, an active, well-maintained presence quietly reinforces that you run a tight operation—not only on the sales call, but everywhere you show up online.",
     includesHeading: "What this service includes",

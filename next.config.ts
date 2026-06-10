@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
         hostname: "**"
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: "/projects",
+        destination: "/work",
+        permanent: true
+      }
+    ];
   }
 };
 

@@ -10,7 +10,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 export const metadata = createMetadata({
   title: "Web Design, SEO & Social Media Services",
   description:
-    "Toronto digital agency MJDM offers web design, development, SEO, social media management, paid ads, video production, and content execution for growing businesses.",
+    "Web design, SEO, social media, and video production services for Toronto service businesses. MJDM brings every channel together under one agency.",
   path: "/services",
   keywords: [
     "web design services Toronto",
@@ -41,7 +41,7 @@ export default function ServicesPage() {
               <section
                 key={service.slug}
                 id={service.slug}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10"
+                className="rounded-4xl border border-white/10 bg-white/3 p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10"
               >
                 <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
                   <div>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                     {service.benefits.map((benefit) => (
                       <div
                         key={benefit}
-                        className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 px-5 py-5 text-slate-200"
+                        className="rounded-3xl border border-white/10 bg-slate-950/70 px-5 py-5 text-slate-200"
                       >
                         {benefit}
                       </div>

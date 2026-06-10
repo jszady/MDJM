@@ -13,7 +13,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 export const metadata = createMetadata({
   title: "Premium Websites, SEO & Social Growth Agency",
   description:
-    "Toronto digital agency building high-conversion websites, sharper brands, and growth systems across web design, SEO, and social media for ambitious businesses.",
+    "MJDM is a Toronto web design and digital marketing agency. We build high-converting websites and run the SEO, social, and content that keeps brands visible.",
   path: "/",
   keywords: [
     "web design agency Toronto",

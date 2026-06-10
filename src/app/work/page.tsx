@@ -10,7 +10,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 export const metadata = createMetadata({
   title: "Agency Portfolio — Web Design & Digital Growth Projects",
   description:
-    "See MJDM's web design and digital growth work: Toronto-area case studies covering website builds, SEO, content systems, and brand strategy that delivered results.",
+    "MJDM's portfolio of web design and digital growth projects. See how Toronto service businesses improved their online presence and conversion rates.",
   path: "/work",
   keywords: ["agency portfolio Toronto", "case studies", "website redesign results", "digital agency work"]
 });

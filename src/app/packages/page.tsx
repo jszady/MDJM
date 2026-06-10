@@ -13,7 +13,7 @@ const sections = [
 
 function PackagesNav() {
   return (
-    <div className="sticky top-[4.25rem] z-30 -mx-4 px-4 py-2 sm:static sm:mx-0 sm:flex sm:justify-center sm:px-0 sm:py-3">
+    <div className="sticky top-17 z-30 -mx-4 px-4 py-2 sm:static sm:mx-0 sm:flex sm:justify-center sm:px-0 sm:py-3">
       <nav className="flex gap-1 overflow-x-auto rounded-full border border-white/10 bg-slate-950/90 p-1 shadow-[0_8px_32px_rgba(2,6,23,0.5)] backdrop-blur-md [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {sections.map(({ id, label }) => (
           <a
@@ -34,7 +34,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Packages — Web, Digital Marketing & Real Estate Video",
   description:
-    "Explore MJDM's service packages across website design & development, digital marketing, and real estate video production. Custom plans available.",
+    "Transparent website, digital marketing, and real estate video packages from MJDM. Fixed-scope builds, monthly retainers, and growth plans for Toronto businesses.",
   path: "/packages",
   keywords: [
     "MJDM packages",
@@ -68,7 +68,7 @@ function PackageCard({
   badge?: string;
 }) {
   return (
-    <div className="relative rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-6 sm:p-8">
+    <div className="relative rounded-3xl border border-white/10 bg-slate-950/70 p-6 sm:p-8">
       {badge && (
         <span className="absolute right-5 top-5 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
           {badge}
@@ -114,7 +114,7 @@ export default function PackagesPage() {
       {/* ── WEBSITE DESIGN, DEVELOPMENT & SEO ───────────────────────── */}
       <SectionShell id="web" className="pt-4">
         <Reveal blur>
-          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-[2rem] sm:p-10">
+          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
             <SectionHeading
               label="Website Design, Development & SEO"
               title="Build packages"
@@ -208,7 +208,7 @@ export default function PackagesPage() {
       {/* ── DIGITAL MARKETING ────────────────────────────────────────── */}
       <SectionShell id="marketing">
         <Reveal blur delay={0.06}>
-          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-[2rem] sm:p-10">
+          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
             <SectionHeading
               label="Social Media Management · Video Content · Paid Advertising"
               title="Digital marketing packages"
@@ -246,7 +246,7 @@ export default function PackagesPage() {
               />
             </div>
 
-            <div className="mt-10 rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-6 sm:p-8">
+            <div className="mt-10 rounded-3xl border border-white/10 bg-slate-950/50 p-6 sm:p-8">
               <h3 className="text-base font-semibold text-white">What's included in every package</h3>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
@@ -273,7 +273,7 @@ export default function PackagesPage() {
       {/* ── REAL ESTATE VIDEO PRODUCTION ─────────────────────────────── */}
       <SectionShell id="realestate">
         <Reveal blur delay={0.1}>
-          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-[2rem] sm:p-10">
+          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
             <SectionHeading
               label="Real Estate Video Production · Cinematic Property Content"
               title="Real estate packages"

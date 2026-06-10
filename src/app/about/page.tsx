@@ -50,7 +50,7 @@ const approach = [
 export const metadata = createMetadata({
   title: "About MJDM — Premium Web Design & Growth Agency",
   description:
-    "MJDM is a Toronto-based digital agency combining premium design, SEO, content systems, and growth execution for ambitious businesses ready to stand out.",
+    "MJDM is a Toronto digital agency combining premium web design with growth-focused SEO, social, and content. We build brands that look current and convert.",
   path: "/about",
   keywords: ["about MJDM", "Toronto digital agency", "creative agency", "marketing partner"]
 });
@@ -88,7 +88,7 @@ export default function AboutPage() {
       <SectionShell className="pt-4">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal blur>
-            <div className="section-surface noise-overlay relative overflow-hidden rounded-[2rem] p-8 sm:p-10">
+            <div className="section-surface noise-overlay relative overflow-hidden rounded-4xl p-8 sm:p-10">
               <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-violet-500/16 blur-3xl" />
               <div className="relative">
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
@@ -126,7 +126,7 @@ export default function AboutPage() {
             {principles.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.08} direction="left" blur>
                 <div className="section-surface relative overflow-hidden rounded-[1.75rem] p-6">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-300/60 to-transparent" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-fuchsia-300/60 to-transparent" />
                   <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-500">
                     0{index + 1}
                   </p>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="relative mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
                 <div className="relative mt-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/75">
-                  <span className="h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent" />
+                  <span className="h-px flex-1 bg-linear-to-r from-cyan-300/40 to-transparent" />
                   {index === approach.length - 1 ? "Compounding Results" : "Next Phase"}
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
             "Consistent execution through content, management, and performance channels."
           ].map((item, index) => (
             <Reveal key={item} delay={index * 0.08} blur>
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_16px_50px_rgba(2,6,23,0.24)]">
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/3 p-6 shadow-[0_16px_50px_rgba(2,6,23,0.24)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/80">
                   0{index + 1}
                 </p>
@@ -196,7 +196,7 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
-      <SectionShell id="team" className="!py-16 sm:!py-20">
+      <SectionShell id="team" className="py-16! sm:py-20!">
         <Reveal blur>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">MJDM Team</p>

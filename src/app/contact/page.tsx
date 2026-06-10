@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, PhoneCall } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, PhoneCall } from "lucide-react";
 
 import { createMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/motion/reveal";
@@ -10,7 +10,7 @@ import { siteConfig } from "@/data/site";
 export const metadata = createMetadata({
   title: "Get in Touch — Start Your Web or Growth Project",
   description:
-    "Contact MJDM to discuss web design, web development, SEO, social media management, content production, or a full digital growth project.",
+    "Get in touch with MJDM to start a web design, SEO, or digital marketing project. Based in Toronto. Reply within one business day.",
   path: "/contact",
   keywords: [
     "contact digital agency",
@@ -50,8 +50,8 @@ export default function ContactPage() {
         ]}
       />
 
-      <SectionShell className="!py-10">
-        <div className="mx-auto max-w-3xl rounded-[1.5rem] border border-white/10 bg-white/[0.03] px-6 py-6 text-center sm:px-8">
+      <SectionShell className="py-10!">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/3 px-6 py-6 text-center sm:px-8">
           <p className="text-sm font-medium uppercase tracking-[0.28em] text-cyan-300/85">What happens next</p>
           <p className="mt-3 text-base leading-7 text-slate-300">
             You will receive a personal response within <span className="text-white">24 hours</span> on business
@@ -102,6 +102,22 @@ export default function ContactPage() {
                         <PhoneCall className="h-5 w-5 shrink-0 text-fuchsia-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
                         <span>{siteConfig.phone}</span>
                       </a>
+                    ) : null}
+                    {siteConfig.address ? (
+                      <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 text-slate-200">
+                        <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-violet-400" />
+                        <span className="leading-7">
+                          {siteConfig.address[0]}<br />{siteConfig.address[1]}
+                        </span>
+                      </div>
+                    ) : null}
+                    {siteConfig.businessHours ? (
+                      <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 text-slate-200">
+                        <Clock className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
+                        <span className="leading-7">
+                          {siteConfig.businessHours[0]}<br />{siteConfig.businessHours[1]}
+                        </span>
+                      </div>
                     ) : null}
                   </div>
                 </div>

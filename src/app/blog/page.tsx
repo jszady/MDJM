@@ -15,7 +15,7 @@ const featuredPost = blogPosts.find((post) => post.featured) ?? blogPosts[0];
 export const metadata = createMetadata({
   title: "Digital Marketing & Web Design Insights",
   description:
-    "MJDM insights on web design, SEO, digital branding, social media performance, and modern growth strategy.",
+    "Digital marketing and web design insights from MJDM. Practical guides on SEO, social media, branding, and online growth for Toronto service businesses.",
   path: "/blog",
   keywords: [
     "digital marketing blog",
@@ -61,7 +61,7 @@ export default function BlogPage() {
             const FeaturedArticle = () => (
               <article
                 className={cn(
-                  "section-surface noise-overlay group relative overflow-hidden rounded-[2rem] p-8 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:p-10",
+                  "section-surface noise-overlay group relative overflow-hidden rounded-4xl p-8 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:p-10",
                   hasArticlePage(featuredPost.slug) &&
                     "transition duration-400 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(103,232,249,0.08),0_20px_80px_rgba(5,10,30,0.35)]"
                 )}
@@ -93,7 +93,7 @@ export default function BlogPage() {
                           {["Strategy", "Execution", "Results"].map((item) => (
                             <div
                               key={item}
-                              className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-3 text-xs text-white/75"
+                              className="rounded-2xl border border-white/10 bg-white/4 px-3 py-3 text-xs text-white/75"
                             >
                               {item}
                             </div>
