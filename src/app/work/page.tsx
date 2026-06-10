@@ -10,9 +10,9 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 export const metadata = createMetadata({
   title: "Agency Portfolio — Web Design & Digital Growth Projects",
   description:
-    "See how MJDM approaches websites, SEO, content systems, and digital growth through high-impact case study structures.",
+    "See MJDM's web design and digital growth work: Toronto-area case studies covering website builds, SEO, content systems, and brand strategy that delivered results.",
   path: "/work",
-  keywords: ["agency portfolio", "case studies", "website redesign results", "digital agency work"]
+  keywords: ["agency portfolio Toronto", "case studies", "website redesign results", "digital agency work"]
 });
 
 export default function WorkPage() {
@@ -45,7 +45,7 @@ export default function WorkPage() {
         ]}
       />
 
-      <SectionShell className="!py-8 sm:!py-10">
+      <SectionShell className="py-8! sm:py-10!">
         <SiteBreadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -71,7 +71,7 @@ export default function WorkPage() {
             </div>
           </Reveal>
           <Reveal delay={0.08} direction="left" blur>
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-300 shadow-[0_16px_50px_rgba(2,6,23,0.3)] lg:max-w-sm">
+            <div className="rounded-[1.75rem] border border-white/10 bg-white/3 p-5 text-sm leading-7 text-slate-300 shadow-[0_16px_50px_rgba(2,6,23,0.3)] lg:max-w-sm">
               <p className="font-semibold uppercase tracking-[0.28em] text-fuchsia-200/80">
                 How to read these studies
               </p>
@@ -86,7 +86,7 @@ export default function WorkPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((study, index) => (
             <Reveal key={study.slug} delay={index * 0.08} blur>
-              <article className="group section-surface noise-overlay relative overflow-hidden rounded-[2rem] transition duration-500 hover:-translate-y-1">
+              <article className="group section-surface noise-overlay relative overflow-hidden rounded-4xl transition duration-500 hover:-translate-y-1">
                 {/* Browser chrome + screenshot */}
                 <div className="overflow-hidden rounded-t-4xl">
                   <div className="flex items-center gap-1.5 border-b border-white/8 bg-slate-900/80 px-4 py-2.5">
@@ -102,7 +102,7 @@ export default function WorkPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={study.logo}
-                      alt={`${study.title} logo`}
+                      alt={study.logoAlt}
                       className="relative z-10 max-h-24 w-auto max-w-50 object-contain drop-shadow-lg transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent" />

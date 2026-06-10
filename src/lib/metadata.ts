@@ -33,10 +33,10 @@ export function createMetadata({
       type: openGraphType,
       images: [
         {
-          url: absoluteUrl("/og-image.png"),
+          url: absoluteUrl("/opengraph-image"),
           width: 1200,
           height: 630,
-          alt: "MJDM digital agency"
+          alt: "MJDM — Premium Web Design, Development & Growth Agency"
         }
       ]
     },
@@ -44,7 +44,7 @@ export function createMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/og-image.png")]
+      images: [absoluteUrl("/opengraph-image")]
     }
   };
 }

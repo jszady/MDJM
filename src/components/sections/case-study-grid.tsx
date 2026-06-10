@@ -45,7 +45,7 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={study.logo}
-                    alt={`${study.title} logo`}
+                    alt={study.logoAlt}
                     className="relative z-10 max-h-20 w-auto max-w-44 object-contain drop-shadow-lg transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent" />

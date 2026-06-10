@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl("/og-image.png"),
+        url: absoluteUrl("/opengraph-image"),
         width: 1200,
         height: 630,
-        alt: "MJDM agency preview"
+        alt: "MJDM — Premium Web Design, Development & Growth Agency"
       }
     ]
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MJDM | Premium Web Design, Development & Growth Agency",
     description: siteConfig.longDescription,
-    images: [absoluteUrl("/og-image.png")]
+    images: [absoluteUrl("/opengraph-image")]
   }
 };
 

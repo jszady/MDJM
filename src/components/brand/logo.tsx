@@ -18,7 +18,7 @@ export function Logo({ className }: LogoProps) {
     >
       <img
         src="/logo.png"
-        alt="MJDM"
+        alt="MJDM Logo"
         width={220}
         height={48}
         className="h-8 w-auto sm:h-12"

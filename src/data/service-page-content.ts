@@ -26,9 +26,9 @@ export type ServicePageCopy = {
 
 export const servicePageContent: Record<string, ServicePageCopy> = {
   "web-design": {
-    metaTitle: "Web Design Agency for Service Businesses",
+    metaTitle: "Web Design Agency for Service Businesses — Toronto",
     metaDescription:
-      "Premium web design for ambitious service brands. Conversion-led UX, responsive systems, and a site that earns trust in seconds. Talk to MJDM.",
+      "Premium web design in Toronto for ambitious service brands. Conversion-led UX, responsive systems, and a site that earns trust in seconds. Talk to MJDM.",
     h1: "Web Design for Ambitious Service Businesses",
     intro:
       "Your website is the first place serious buyers look when they compare you to competitors. In seconds they decide whether you feel established, credible, and worth a conversation. MJDM designs websites for service businesses that cannot afford to look generic: law firms, consultancies, agencies, trades, clinics, and B2B operators who win on trust and clarity. We combine premium visual direction with conversion-led layout, messaging hierarchy, and responsive systems so your brand reads as sharp on mobile as it does on desktop. Whether you are launching a new offer, repositioning, or replacing an outdated build, our web design process is built around commercial outcomes: clearer positioning, stronger first impressions, and a smoother path from visit to inquiry.",
@@ -179,9 +179,9 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
   },
 
   seo: {
-    metaTitle: "SEO Agency for Service Businesses",
+    metaTitle: "SEO Agency for Toronto Service Businesses",
     metaDescription:
-      "SEO that grows qualified enquiries: technical foundations, on-page structure, and content planning for service brands. Work with MJDM to rank with intent.",
+      "Toronto SEO for service businesses: technical foundations, on-page structure, and content planning to rank with intent and grow qualified leads. Work with MJDM.",
     h1: "SEO for Service Businesses That Want to Grow",
     intro:
       "Search is where high-intent buyers look when they need a provider—not a product page for shoes, but a partner for legal advice, construction, consulting, healthcare, or professional services. MJDM helps service businesses earn visibility for the queries that actually drive revenue, not vanity traffic. That means technical SEO that lets Google crawl and understand your site, on-page structure that maps pages to real search intent, and content planning that strengthens authority over time. We focus on the foundations that compound: site architecture, internal linking, page quality, and measurement—then we align recommendations with how your sales team actually wins deals. If your pipeline depends on being found when someone types “near me” or “for [industry]”, SEO should be treated as a growth system, not a monthly checklist.",

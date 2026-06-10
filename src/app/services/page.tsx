@@ -10,12 +10,12 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 export const metadata = createMetadata({
   title: "Web Design, SEO & Social Media Services",
   description:
-    "Explore MJDM services including web design, development, SEO, social media management, paid social, video production, and content execution.",
+    "Toronto digital agency MJDM offers web design, development, SEO, social media management, paid ads, video production, and content execution for growing businesses.",
   path: "/services",
   keywords: [
-    "web design services",
+    "web design services Toronto",
     "web development services",
-    "SEO services",
+    "SEO services Toronto",
     "social media management",
     "video editing agency"
   ]

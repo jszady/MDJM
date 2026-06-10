@@ -20,7 +20,7 @@ export function SiteHeader() {
         <Link href="/" className="shrink-0">
           <Image
             src="/logo.png"
-            alt="MJDM"
+            alt="MJDM Logo"
             width={360}
             height={88}
             priority

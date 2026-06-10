@@ -28,13 +28,24 @@ export async function generateMetadata({ params }: Props) {
 
   if (!post || !content) return { title: "Article Not Found" };
 
-  return createMetadata({
+  const publishedIso = getArticlePublishedIso(slug);
+  const base = createMetadata({
     title: post.metaTitle ?? post.title,
     description: post.metaDescription ?? post.excerpt,
     path: `/blog/${slug}`,
     keywords: [post.category.toLowerCase(), "web design", "digital agency"],
     openGraphType: "article"
   });
+
+  return {
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      type: "article" as const,
+      ...(publishedIso ? { publishedTime: publishedIso } : {}),
+      authors: ["MJDM Team"]
+    }
+  };
 }
 
 export function generateStaticParams() {
@@ -135,7 +146,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <article
             data-article-content
-            className="article-container relative mt-14 overflow-hidden rounded-[2.25rem] border border-cyan-400/10 bg-white/[0.02] p-10 shadow-[0_0_0_1px_rgba(103,232,249,0.08),0_20px_80px_rgba(5,10,30,0.35),inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl sm:p-14"
+            className="article-container relative mt-14 overflow-hidden rounded-[2.25rem] border border-cyan-400/10 bg-white/2 p-10 shadow-[0_0_0_1px_rgba(103,232,249,0.08),0_20px_80px_rgba(5,10,30,0.35),inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl sm:p-14"
           >
             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-fuchsia-500/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-cyan-500/8 blur-3xl" />

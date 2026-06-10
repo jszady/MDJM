@@ -50,9 +50,9 @@ const approach = [
 export const metadata = createMetadata({
   title: "About MJDM — Premium Web Design & Growth Agency",
   description:
-    "Learn how MJDM approaches premium design, digital growth, content systems, and conversion-focused execution for modern businesses.",
+    "MJDM is a Toronto-based digital agency combining premium design, SEO, content systems, and growth execution for ambitious businesses ready to stand out.",
   path: "/about",
-  keywords: ["about MJDM", "digital agency", "creative agency", "marketing partner"]
+  keywords: ["about MJDM", "Toronto digital agency", "creative agency", "marketing partner"]
 });
 
 export default function AboutPage() {
