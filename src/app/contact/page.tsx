@@ -1,4 +1,4 @@
-import { Mail, PhoneCall } from "lucide-react";
+import { Mail, MessageCircle, PhoneCall } from "lucide-react";
 
 import { createMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/motion/reveal";
@@ -67,9 +67,9 @@ export default function ContactPage() {
             <ContactForm />
           </Reveal>
 
-          <div className="grid gap-5">
+          <div className="grid auto-rows-min gap-5">
             <Reveal delay={0.08} direction="left" blur>
-              <div className="section-surface noise-overlay relative overflow-hidden rounded-[2rem] p-6">
+              <div className="section-surface noise-overlay relative overflow-hidden rounded-4xl p-6">
                 <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-cyan-400/14 blur-3xl" />
                 <div className="relative">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
@@ -78,17 +78,28 @@ export default function ContactPage() {
                   <div className="mt-6 grid gap-4">
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="group flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-cyan-300/40 hover:shadow-[0_0_30px_rgba(103,232,249,0.1)]"
+                      className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-cyan-300/40 hover:shadow-[0_0_30px_rgba(103,232,249,0.1)]"
                     >
-                      <Mail className="h-5 w-5 text-cyan-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
+                      <Mail className="h-5 w-5 shrink-0 text-cyan-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
                       <span>{siteConfig.email}</span>
                     </a>
+                    {siteConfig.whatsappNumber ? (
+                      <a
+                        href={`https://wa.me/${siteConfig.whatsappNumber}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-emerald-300/40 hover:shadow-[0_0_30px_rgba(52,211,153,0.1)]"
+                      >
+                        <MessageCircle className="h-5 w-5 shrink-0 text-emerald-400 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
+                        <span>+1 (647) 887-5823</span>
+                      </a>
+                    ) : null}
                     {siteConfig.phone ? (
                       <a
                         href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
-                        className="group flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-fuchsia-300/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.1)]"
+                        className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 text-slate-200 transition duration-300 hover:border-fuchsia-300/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.1)]"
                       >
-                        <PhoneCall className="h-5 w-5 text-fuchsia-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
+                        <PhoneCall className="h-5 w-5 shrink-0 text-fuchsia-300 transition duration-300 group-hover:brightness-110 group-hover:scale-105" />
                         <span>{siteConfig.phone}</span>
                       </a>
                     ) : null}
@@ -98,7 +109,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.16} direction="left" blur>
-              <div className="section-surface relative overflow-hidden rounded-[2rem] p-6">
+              <div className="section-surface relative overflow-hidden rounded-4xl p-6">
                 <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-fuchsia-500/14 blur-3xl" />
                 <div className="relative">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
@@ -112,7 +123,6 @@ export default function ContactPage() {
                 </div>
               </div>
             </Reveal>
-
           </div>
         </div>
       </SectionShell>

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { navigationLinks } from "@/data/navigation";
 import { ButtonLink } from "@/components/ui/button-link";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -43,7 +44,7 @@ export function SiteHeader() {
           <ButtonLink href="/contact" variant="secondary">
             Send Inquiry
           </ButtonLink>
-          <ButtonLink href="mailto:info@mjdm.io" variant="primaryNav" arrow>
+          <ButtonLink href={siteConfig.bookingUrl} variant="primaryNav" arrow>
             Book a Call
           </ButtonLink>
         </div>
@@ -84,7 +85,7 @@ export function SiteHeader() {
                 <ButtonLink href="/contact" variant="secondary" className="w-full justify-center">
                   Send Inquiry
                 </ButtonLink>
-                <ButtonLink href="mailto:info@mjdm.io" variant="primaryNav" arrow className="w-full justify-center">
+                <ButtonLink href={siteConfig.bookingUrl} variant="primaryNav" arrow className="w-full justify-center">
                   Book a Call
                 </ButtonLink>
               </div>

@@ -101,7 +101,7 @@ export function ContactForm() {
         </div>
 
         <div className="mt-5 grid gap-5 sm:grid-cols-2">
-          <label className="grid gap-2 text-sm text-slate-300">
+          <label className="grid min-w-0 gap-2 text-sm text-slate-300">
           Email
           <input
             type="email"
@@ -112,14 +112,14 @@ export function ContactForm() {
             placeholder="you@company.com"
           />
           </label>
-          <label className="grid gap-2 text-sm text-slate-300">
+          <label className="grid min-w-0 gap-2 text-sm text-slate-300">
           Service Needed
           <select
             value={values.serviceNeeded}
             onChange={(event) =>
               setValues((current) => ({ ...current, serviceNeeded: event.target.value }))
             }
-            className="rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
+            className="w-full rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
           >
             {services.map((service) => (
               <option key={service.slug} value={service.title}>
