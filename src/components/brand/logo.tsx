@@ -17,7 +17,7 @@ export function Logo({ className }: LogoProps) {
       )}
     >
       <img
-        src="/mjdm-logo-final.png"
+        src="/logo.png"
         alt="MJDM"
         width={220}
         height={48}

@@ -16,11 +16,11 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? (
-        <p className="mb-5 inline-flex rounded-full border border-cyan-300/15 bg-cyan-300/8 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.35em] text-cyan-200/90 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
+        <p className="mb-4 inline-flex max-w-full rounded-full border border-cyan-300/15 bg-cyan-300/8 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-cyan-200/90 shadow-[0_0_30px_rgba(34,211,238,0.08)] sm:mb-5 sm:px-4 sm:py-2 sm:text-[0.68rem] sm:tracking-[0.35em]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="heading-lg glow-text max-w-[16ch] text-white">
+      <h2 className="heading-lg glow-text max-w-none text-white sm:max-w-[16ch]">
         {title}
       </h2>
       {description ? (

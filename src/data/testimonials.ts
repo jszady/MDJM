@@ -1,20 +1,20 @@
 export const testimonials = [
   {
     quote:
-      "MJDM gave our brand a completely different level of presence. The site feels premium, the messaging is clearer, and inquiries improved almost immediately.",
-    name: "Amelia Ross",
-    role: "Director, Sterling Law"
+      "Our firm's online presence wasn't reflecting the level of work we actually do. MJDM changed that. The site is sharp, the messaging is clear, and new clients regularly tell us it was the reason they reached out.",
+    name: "Jujhar Mangat",
+    role: "Founder, JSM Law"
   },
   {
     quote:
-      "They understand both design and growth. We did not just get better content, we got a tighter system for publishing and performance.",
-    name: "Daniel Pierce",
-    role: "Founder, Northline Real Estate"
+      "I needed a brand that matched the energy we bring to our clients every day. MJDM built something I'm genuinely proud to send people to. The site does the selling before I even pick up the phone.",
+    name: "Connor",
+    role: "Owner, Icon Body and Mind"
   },
   {
     quote:
-      "The difference was the execution quality. The website finally matched the level of service we deliver in real life.",
-    name: "Sofia Malik",
-    role: "Owner, Atlas Home Services"
+      "We needed a site that spoke directly to contractors and builders without any of the fluff. MJDM understood the industry and delivered something clean, professional, and easy to navigate.",
+    name: "Aleksei",
+    role: "Owner, CA Building Supply"
   }
 ];

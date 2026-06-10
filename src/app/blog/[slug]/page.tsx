@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props) {
 
 export function generateStaticParams() {
   return [
-    { slug: "how-much-does-web-design-cost-in-the-uk-2026-guide" },
+    { slug: "how-much-does-web-design-cost-in-canada-2026-guide" },
     { slug: "seo-for-service-businesses-where-to-start" },
     { slug: "social-media-management-for-small-businesses-what-actually-works" },
     { slug: "why-modern-web-design-still-wins-trust-fast" },
@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "MJDM",
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/mjdm-logo-final.png")
+        url: absoluteUrl("/logo.png")
       }
     },
     mainEntityOfPage: {

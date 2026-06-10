@@ -5,7 +5,7 @@ import { SectionShell } from "@/components/ui/section-shell";
 export function IndustriesBand() {
   return (
     <SectionShell>
-      <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10">
+      <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 sm:rounded-[2rem] sm:p-10">
         <SectionHeading
           eyebrow="Who We Work With"
           title="Built for businesses that know weak digital presence costs real opportunities."

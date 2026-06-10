@@ -15,13 +15,13 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "how-much-does-web-design-cost-in-the-uk-2026-guide",
-    title: "How Much Does Web Design Cost in the UK? (2026 Guide)",
+    slug: "how-much-does-web-design-cost-in-canada-2026-guide",
+    title: "How Much Does Web Design Cost in Canada? (2026 Guide)",
     excerpt:
-      "A practical guide to UK web design pricing: what drives quotes, realistic budgets for service brands, and how to compare agencies without paying for hidden gaps.",
-    metaTitle: "UK Web Design Costs 2026 — What Service Brands Pay",
+      "A practical guide to Canadian web design pricing: what drives quotes, realistic budgets for service brands in Toronto and beyond, and how to compare agencies without paying for hidden gaps.",
+    metaTitle: "Web Design Costs in Canada 2026 — What Toronto Service Brands Pay",
     metaDescription:
-      "UK web design costs explained for 2026: what drives quotes, typical budgets for service brands, and how to get value. Practical guide from MJDM—read more.",
+      "Web design costs in Canada explained for 2026: what drives quotes, typical budgets for Toronto service brands, and how to get real value. Practical guide from MJDM.",
     category: "Web Design",
     readTime: "11 min read",
     featured: true,

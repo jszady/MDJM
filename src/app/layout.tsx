@@ -11,7 +11,7 @@ import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mjdm.agency"),
+  metadataBase: new URL("https://www.mjdm.io"),
   title: {
     default: "MJDM | Premium Web Design, Development & Growth Agency",
     template: "%s | MJDM"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: siteConfig.longDescription,
     url: absoluteUrl("/"),
     siteName: "MJDM",
-    locale: "en_GB",
+    locale: "en_CA",
     type: "website",
     images: [
       {
@@ -50,15 +50,21 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "MJDM",
-  url: "https://www.mjdm.agency",
-  logo: "https://www.mjdm.agency/icon.svg",
+  url: "https://www.mjdm.io",
+  logo: "https://www.mjdm.io/logo.png",
   description: siteConfig.longDescription,
   email: siteConfig.email,
   ...(siteConfig.socialLinks.length
     ? { sameAs: siteConfig.socialLinks.map((link) => link.href) }
     : {}),
   ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
-  areaServed: ["United Kingdom", "United States", "Canada", "Worldwide"]
+  address: {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "Ontario",
+    "addressCountry": "CA"
+  },
+  areaServed: ["Toronto", "Canada", "United States", "Worldwide"]
 };
 
 export default function RootLayout({
@@ -67,7 +73,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-CA">
       <body className="noise-overlay antialiased">
         <div className="relative min-h-screen overflow-hidden">
           <AmbientBackground />

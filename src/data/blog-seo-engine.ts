@@ -1,28 +1,28 @@
 import type { ContentBlock } from "@/data/blog-blocks";
 
 export const seoEngineArticles: Record<string, ContentBlock[]> = {
-  "how-much-does-web-design-cost-in-the-uk-2026-guide": [
+  "how-much-does-web-design-cost-in-canada-2026-guide": [
     {
       type: "paragraph",
-      text: "If you are researching how much web design costs in the UK in 2026, you are probably comparing quotes that look nothing alike—and wondering which number reflects reality. Web design pricing is not standardised because websites are not commodities: a five-page marketing site for a local consultancy is a different product from a multi-location service platform with integrations, CRM hooks, and a content system your team will use every week. This guide breaks down what actually drives cost, what UK service businesses typically invest at sensible quality levels, and how to evaluate proposals so you pay for outcomes—not surprises. For a structured view of how MJDM approaches the craft end-to-end, see our dedicated [web design service page](/services/web-design)."
+      text: "If you are researching how much web design costs in Canada in 2026, you are probably comparing quotes that look nothing alike—and wondering which number reflects reality. Web design pricing is not standardised because websites are not commodities: a five-page marketing site for a local consultancy is a different product from a multi-location service platform with integrations, CRM hooks, and a content system your team will use every week. This guide breaks down what actually drives cost, what Canadian service businesses typically invest at sensible quality levels, and how to evaluate proposals so you pay for outcomes—not surprises. For a structured view of how MJDM approaches the craft end-to-end, see our dedicated [web design service page](/services/web-design)."
     },
-    { type: "heading2", text: "What drives web design pricing in the UK?" },
+    { type: "heading2", text: "What drives web design pricing in Canada?" },
     {
       type: "paragraph",
       text: "Most reputable studios price around scope, risk, and calibre—not an arbitrary per-page rate. The biggest drivers are: the number of unique templates and states you need (homepage, services, case studies, team, contact, legal, blog, gated content); the depth of UX and messaging work required before pixels; brand and visual direction (net-new identity versus applying an existing system); content volume and whether writers are involved; technical integrations (forms, CRM, booking, analytics, marketing automation); performance and accessibility expectations; and ongoing support after launch. Two projects with the same page count can diverge sharply if one needs a lightweight marketing presence and the other needs a conversion engine with experimentation baked in."
     },
     {
       type: "paragraph",
-      text: "Geography still influences rates—London and major hubs often carry higher day rates—but remote-first agencies mean you can access senior talent without postcode premiums if you choose partners who work clearly across time zones. What matters more than postcode is whether the team you hire has a repeatable delivery process, senior oversight on your account, and a portfolio that proves they understand service businesses where trust and clarity sell the work."
+      text: "Geography still influences rates—Toronto and Vancouver agencies often carry higher day rates—but remote-first agencies mean you can access senior talent without location premiums if you choose partners who work clearly across time zones. What matters more than location is whether the team you hire has a repeatable delivery process, senior oversight on your account, and a portfolio that proves they understand service businesses where trust and clarity sell the work."
     },
     {
       type: "paragraph",
       text: "Another driver is risk allocation. Fixed-price engagements usually bake in contingency for unknowns; time-and-materials can look cheaper on paper until scope shifts weekly. Hybrid models—fixed discovery and UX, variable build against agreed milestones—often suit service brands that need predictability early and flexibility once the shape is proven."
     },
-    { type: "heading2", text: "Typical UK investment ranges for service-business websites" },
+    { type: "heading2", text: "Typical Canadian investment ranges for service-business websites" },
     {
       type: "paragraph",
-      text: "Publishing exact figures dates quickly, but realistic bands help you sanity-check quotes. In 2026, many UK service brands with a serious growth agenda invest in professionally designed marketing sites roughly in the low- to mid-five figures in GBP for a bespoke, conversion-led build—not a theme with your logo swapped in. Smaller brochure sites can sit below that when scope is tight and assets exist; complex programmes with custom components, multi-language needs, or heavy integrations move upward. Treat any quote that looks suspiciously cheap as a scope question: what is excluded, who owns the code, and what happens when you need changes after launch?"
+      text: "Publishing exact figures dates quickly, but realistic bands help you sanity-check quotes. In 2026, many Canadian service brands with a serious growth agenda invest in professionally designed marketing sites roughly in the low- to mid-five figures in CAD for a bespoke, conversion-led build—not a theme with your logo swapped in. Smaller brochure sites can sit below that when scope is tight and assets exist; complex programmes with custom components, multi-language needs, or heavy integrations move upward. Treat any quote that looks suspiciously cheap as a scope question: what is excluded, who owns the code, and what happens when you need changes after launch?"
     },
     {
       type: "list",
@@ -157,7 +157,7 @@ export const seoEngineArticles: Record<string, ContentBlock[]> = {
     },
     {
       type: "paragraph",
-      text: "Finally, connect SEO with your site experience: if you are investing in rankings, also invest in a site that converts when traffic arrives. Our guide on [how much web design costs in the UK (2026)](/blog/how-much-does-web-design-cost-in-the-uk-2026-guide) helps you budget the front-end experience so SEO traffic does not leak at the last mile."
+      text: "Finally, connect SEO with your site experience: if you are investing in rankings, also invest in a site that converts when traffic arrives. Our guide on [how much web design costs in the UK (2026)](/blog/how-much-does-web-design-cost-in-canada-2026-guide) helps you budget the front-end experience so SEO traffic does not leak at the last mile."
     },
     {
       type: "paragraph",

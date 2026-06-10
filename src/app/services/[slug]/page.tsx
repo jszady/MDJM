@@ -71,10 +71,10 @@ export default async function ServiceDetailPage({ params }: Props) {
     provider: {
       "@type": "Organization",
       name: "MJDM",
-      url: "https://www.mjdm.agency",
-      email: "hello@mjdm.agency"
+      url: "https://www.mjdm.io",
+      email: "info@mjdm.io"
     },
-    areaServed: ["United Kingdom", "United States", "Canada", "Worldwide"]
+    areaServed: ["Toronto", "Canada", "United States", "Worldwide"]
   };
 
   const relatedServices = copy.relatedSlugs

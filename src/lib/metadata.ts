@@ -29,7 +29,7 @@ export function createMetadata({
       description,
       url: absoluteUrl(path),
       siteName: "MJDM",
-      locale: "en_GB",
+      locale: "en_CA",
       type: openGraphType,
       images: [
         {

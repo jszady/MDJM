@@ -28,7 +28,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Services built to strengthen visibility, credibility, and conversion."
         description="MJDM brings websites, content, social, and growth strategy together so businesses do not have to piece together disconnected execution."
-        primaryCta={{ label: "Book a Discovery Call", href: "mailto:hello@mjdm.agency" }}
+        primaryCta={{ label: "Book a Discovery Call", href: "mailto:info@mjdm.io" }}
         secondaryCta={{ label: "Send an Inquiry", href: "/contact" }}
       />
 

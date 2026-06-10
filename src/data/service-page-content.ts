@@ -96,8 +96,8 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
     relatedSlugs: ["web-development", "seo", "social-media-management"],
     relatedBlog: [
       {
-        slug: "how-much-does-web-design-cost-in-the-uk-2026-guide",
-        title: "How much does web design cost in the UK? (2026 guide)"
+        slug: "how-much-does-web-design-cost-in-canada-2026-guide",
+        title: "How much does web design cost in Canada? (2026 guide)"
       },
       { slug: "why-modern-web-design-still-wins-trust-fast", title: "Why modern web design still wins trust fast" },
       { slug: "building-a-brand-that-looks-expensive-online", title: "Building a brand that looks expensive online" }
@@ -170,8 +170,8 @@ export const servicePageContent: Record<string, ServicePageCopy> = {
     relatedSlugs: ["web-design", "seo", "content-posting-account-management"],
     relatedBlog: [
       {
-        slug: "how-much-does-web-design-cost-in-the-uk-2026-guide",
-        title: "How much does web design cost in the UK? (2026 guide)"
+        slug: "how-much-does-web-design-cost-in-canada-2026-guide",
+        title: "How much does web design cost in Canada? (2026 guide)"
       },
       { slug: "why-modern-web-design-still-wins-trust-fast", title: "Why modern web design still wins trust fast" },
       { slug: "seo-foundations-every-service-business-needs", title: "SEO foundations every service business needs" }

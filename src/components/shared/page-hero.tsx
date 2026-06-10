@@ -37,18 +37,18 @@ export function PageHero({
   spotlight
 }: PageHeroProps) {
   return (
-    <SectionShell className="pb-10 pt-14 sm:pt-20">
-      <div className="section-surface noise-overlay relative overflow-hidden rounded-[2.25rem] px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14">
+    <SectionShell className="pb-8 pt-10 sm:pb-10 sm:pt-14 lg:pt-20">
+      <div className="section-surface noise-overlay relative overflow-hidden rounded-[1.75rem] px-4 py-6 sm:rounded-[2.25rem] sm:px-10 sm:py-10 lg:px-14 lg:py-14">
         <AmbientBackground />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_34%),linear-gradient(135deg,rgba(15,23,42,0.06),rgba(168,85,247,0.05),rgba(34,211,238,0.03))]" />
-        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-end">
+        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-end lg:gap-10">
           <Reveal blur>
             <div>
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/85">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-cyan-300/85 sm:gap-3 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.35em]">
                 <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
                 {eyebrow}
               </div>
-              <h1 className="glow-text mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl lg:text-[4.5rem] lg:leading-[0.95]">
+              <h1 className="glow-text mt-5 max-w-4xl text-[1.85rem] font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:mt-6 sm:text-5xl sm:leading-tight lg:text-[4.5rem] lg:leading-[0.95]">
                 {title}
               </h1>
               <p className="mt-6 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
@@ -67,14 +67,14 @@ export function PageHero({
                 </div>
               ) : null}
               {primaryCta || secondaryCta ? (
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
                   {primaryCta ? (
-                    <ButtonLink href={primaryCta.href} arrow>
+                    <ButtonLink href={primaryCta.href} arrow className="w-full justify-center sm:w-auto">
                       {primaryCta.label}
                     </ButtonLink>
                   ) : null}
                   {secondaryCta ? (
-                    <ButtonLink href={secondaryCta.href} variant="secondary">
+                    <ButtonLink href={secondaryCta.href} variant="secondary" className="w-full justify-center sm:w-auto">
                       {secondaryCta.label}
                     </ButtonLink>
                   ) : null}
@@ -83,7 +83,7 @@ export function PageHero({
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} direction="left" blur>
+          <Reveal delay={0.08} direction="left" blur className="hidden lg:block">
             <div className="grid gap-4">
               {spotlight ? (
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-slate-950/65 p-6 shadow-[0_20px_70px_rgba(2,6,23,0.45)]">

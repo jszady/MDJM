@@ -57,7 +57,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="section-surface noise-overlay relative overflow-hidden rounded-[2rem] p-6 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:p-8"
+      className="section-surface noise-overlay relative overflow-hidden rounded-[1.5rem] p-5 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:rounded-[2rem] sm:p-8"
     >
       <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-fuchsia-500/14 blur-3xl" />
       <div className="pointer-events-none absolute left-0 top-10 h-32 w-32 rounded-full bg-cyan-400/12 blur-3xl" />
@@ -144,15 +144,20 @@ export function ContactForm() {
           />
         </label>
 
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-4">
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center justify-center rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.95),rgba(217,70,239,0.9))] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35),0_0_60px_rgba(236,72,153,0.12)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(139,92,246,0.45),0_0_80px_rgba(236,72,153,0.2)] hover:border-violet-300/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex w-full items-center justify-center rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.95),rgba(217,70,239,0.9))] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35),0_0_60px_rgba(236,72,153,0.12)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(139,92,246,0.45),0_0_80px_rgba(236,72,153,0.2)] hover:border-violet-300/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
           >
             {status === "loading" ? "Sending..." : "Request a response"}
           </button>
-          <p className="text-sm text-slate-400">Prefer email? Reach MJDM directly at hello@mjdm.agency</p>
+          <p className="text-center text-sm text-slate-400 sm:text-left">
+            Prefer email?{" "}
+            <a href="mailto:info@mjdm.io" className="text-cyan-300/90 underline-offset-2 hover:underline">
+              info@mjdm.io
+            </a>
+          </p>
         </div>
 
         {feedback ? (

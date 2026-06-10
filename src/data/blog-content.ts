@@ -338,7 +338,7 @@ export const blogArticleDates: Record<string, string> = {
   "seo-foundations-every-service-business-needs": "March 14, 2025",
   "short-form-content-turns-attention-into-inquiries": "March 18, 2025",
   "building-a-brand-that-looks-expensive-online": "March 22, 2025",
-  "how-much-does-web-design-cost-in-the-uk-2026-guide": "January 8, 2026",
+  "how-much-does-web-design-cost-in-canada-2026-guide": "January 8, 2026",
   "seo-for-service-businesses-where-to-start": "January 15, 2026",
   "social-media-management-for-small-businesses-what-actually-works": "January 22, 2026"
 };

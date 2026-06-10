@@ -16,21 +16,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = siteConfig.sitemap.map((path) => ({
-    url: `https://www.mjdm.agency${path}`,
+    url: `https://www.mjdm.io${path}`,
     lastModified: now,
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : 0.8
   }));
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `https://www.mjdm.agency/blog/${post.slug}`,
+    url: `https://www.mjdm.io/blog/${post.slug}`,
     lastModified: lastModifiedForBlogSlug(post.slug),
     changeFrequency: "monthly" as const,
     priority: 0.75
   }));
 
   const serviceEntries: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `https://www.mjdm.agency/services/${s.slug}`,
+    url: `https://www.mjdm.io/services/${s.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.85

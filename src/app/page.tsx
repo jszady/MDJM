@@ -16,11 +16,12 @@ export const metadata = createMetadata({
     "MJDM builds high-conversion websites, premium digital brands, and growth systems across web, SEO, and social media.",
   path: "/",
   keywords: [
-    "web design agency",
-    "web development agency",
-    "SEO agency",
+    "web design agency Toronto",
+    "web development agency Toronto",
+    "SEO agency Toronto",
     "social media management agency",
-    "creative digital agency"
+    "digital agency Toronto",
+    "creative digital agency Canada"
   ]
 });
 

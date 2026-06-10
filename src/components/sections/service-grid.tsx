@@ -23,7 +23,7 @@ export function ServiceGrid({ compact = false, className }: ServiceGridProps) {
         description="Premium websites, stronger search visibility, sharper social content, and campaign execution built to create momentum, not noise."
       />
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-2 xl:grid-cols-4">
         {services.map((service, index) => {
           const Icon = service.icon;
 
@@ -32,7 +32,7 @@ export function ServiceGrid({ compact = false, className }: ServiceGridProps) {
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-                className="service-card group section-surface h-full rounded-[2rem] p-6"
+                className="service-card group section-surface h-full rounded-[1.5rem] p-5 sm:rounded-[2rem] sm:p-6"
               >
                 <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(34,211,238,0.1),transparent_38%,rgba(217,70,239,0.1))] opacity-0 transition duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.16),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.16),transparent_34%)] opacity-40 transition duration-500 group-hover:opacity-75" />
@@ -51,7 +51,7 @@ export function ServiceGrid({ compact = false, className }: ServiceGridProps) {
                     <p className="text-[0.68rem] uppercase tracking-[0.32em] text-slate-500">
                       {service.slug.replaceAll("-", " ")}
                     </p>
-                    <h3 className="mt-4 text-[1.6rem] font-semibold leading-tight text-white transition duration-500 group-hover:text-cyan-200">
+                    <h3 className="mt-4 text-xl font-semibold leading-tight text-white transition duration-500 group-hover:text-cyan-200 sm:text-[1.6rem]">
                       {service.title}
                     </h3>
                   </div>

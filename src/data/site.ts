@@ -18,9 +18,9 @@ export const siteConfig: SiteConfig = {
     "MJDM builds bold websites, sharper brands, and high-performance digital campaigns for ambitious businesses.",
   longDescription:
     "MJDM is a modern marketing and digital agency delivering premium web design, development, SEO, content production, and social media growth systems for businesses ready to stand out.",
-  email: "hello@mjdm.agency",
-  headquarters: "Working with clients across the UK, Canada, the US, and beyond",
-  bookingUrl: "mailto:hello@mjdm.agency?subject=Book%20a%20strategy%20call",
+  email: "info@mjdm.io",
+  headquarters: "Toronto, Ontario, Canada",
+  bookingUrl: "mailto:info@mjdm.io?subject=Book%20a%20strategy%20call",
   socialLinks: [],
-  sitemap: ["/", "/services", "/work", "/about", "/blog", "/contact"]
+  sitemap: ["/", "/services", "/packages", "/work", "/about", "/blog", "/contact"]
 };

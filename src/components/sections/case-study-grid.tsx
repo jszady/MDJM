@@ -28,21 +28,30 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {items.map((study, index) => (
           <Reveal key={study.slug} delay={index * 0.08}>
-            <Link
-              href="/work"
-              className="group block overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-400 ease-out hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(103,232,249,0.08)]"
-            >
-              <div
-                className={`relative h-56 overflow-hidden bg-gradient-to-br ${study.accent} p-6`}
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.18),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.45),_transparent_40%)]" />
-                <div className="relative flex h-full flex-col justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-[0.32em] text-white/80">
+            <div className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/3 transition duration-400 ease-out hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(103,232,249,0.08)]">
+              <Link href="/work" className="absolute inset-0 z-0" aria-label={`View ${study.title} case study`} />
+              {/* Browser chrome + screenshot */}
+              <div className="overflow-hidden rounded-t-4xl">
+                <div className="flex items-center gap-1.5 border-b border-white/8 bg-slate-900/80 px-4 py-2.5">
+                  <span className="h-2 w-2 rounded-full bg-red-400/60" />
+                  <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
+                  <span className="h-2 w-2 rounded-full bg-green-400/60" />
+                  <div className="ml-2 flex-1 truncate rounded bg-slate-800/80 px-3 py-1 text-[10px] text-slate-500">
+                    {study.url}
+                  </div>
+                </div>
+                <div className="relative flex h-48 items-center justify-center overflow-hidden bg-slate-950">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_65%)]" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={study.logo}
+                    alt={`${study.title} logo`}
+                    className="relative z-10 max-h-20 w-auto max-w-44 object-contain drop-shadow-lg transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent" />
+                  <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 backdrop-blur-sm">
                     {study.category}
                   </span>
-                  <div className="rounded-[1.5rem] border border-white/15 bg-slate-950/50 p-4 backdrop-blur-sm">
-                    <p className="text-sm text-white/70">Project preview</p>
-                  </div>
                 </div>
               </div>
               <div className="p-6">
@@ -54,14 +63,23 @@ export function CaseStudyGrid({ limit }: CaseStudyGridProps) {
                   {study.results.map((result) => (
                     <span
                       key={result}
-                      className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
+                      className="rounded-full border border-white/10 bg-white/3 px-3 py-1 text-xs text-slate-300"
                     >
                       {result}
                     </span>
                   ))}
                 </div>
+                <a
+                  href={study.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 mt-4 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200 transition duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/14 hover:text-white"
+                >
+                  Visit Website
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
               </div>
-            </Link>
+            </div>
           </Reveal>
         ))}
       </div>

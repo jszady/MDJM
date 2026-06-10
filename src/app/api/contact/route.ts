@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site";
 
 /**
  * Contact delivery: set RESEND_API_KEY. Set RESEND_FROM_EMAIL to a Resend-verified sender
- * (e.g. MJDM <hello@mjdm.agency>); otherwise Resend's onboarding sender is used for testing only.
+ * (e.g. MJDM <info@mjdm.io>); otherwise Resend's onboarding sender is used for testing only.
  * Optional CONTACT_TO_EMAIL overrides the inbox (defaults to siteConfig.email).
  */
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "We could not deliver your message from this environment. Please email hello@mjdm.agency directly."
+          "We could not deliver your message from this environment. Please email info@mjdm.io directly."
       },
       { status: 503 }
     );
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "We could not send your message right now. Please try again in a moment or email hello@mjdm.agency."
+          "We could not send your message right now. Please try again in a moment or email info@mjdm.io."
       },
       { status: 502 }
     );
@@ -78,6 +78,6 @@ export async function POST(request: Request) {
 
   return NextResponse.json({
     message:
-      "Inquiry received. MJDM will be in touch soon. You can also email hello@mjdm.agency directly."
+      "Inquiry received. MJDM will be in touch soon. You can also email info@mjdm.io directly."
   });
 }

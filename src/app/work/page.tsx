@@ -23,7 +23,7 @@ export default function WorkPage() {
         title="Portfolio work shaped to look premium, feel current, and prove commercial impact."
         description="MJDM case studies are built to showcase transformation, performance, and the kind of creative execution ambitious businesses expect from a modern digital partner."
         primaryCta={{ label: "Discuss Your Project", href: "/contact" }}
-        secondaryCta={{ label: "Email MJDM", href: "mailto:hello@mjdm.agency" }}
+        secondaryCta={{ label: "Email MJDM", href: "mailto:info@mjdm.io" }}
         featureChips={["Premium presentation", "Results-led storytelling", "Visual case studies"]}
         spotlight={{
           label: "Portfolio System",
@@ -38,8 +38,8 @@ export default function WorkPage() {
             detail: "Representative engagements across web, growth, and brand-focused work."
           },
           {
-            value: "4D",
-            label: "Delivery scope",
+            value: "4",
+            label: "Disciplines",
             detail: "Strategy, design, content, and growth outcomes captured end to end."
           }
         ]}
@@ -86,95 +86,59 @@ export default function WorkPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((study, index) => (
             <Reveal key={study.slug} delay={index * 0.08} blur>
-              <article className="group section-surface noise-overlay relative overflow-hidden rounded-[2rem] p-3 transition duration-500 hover:-translate-y-1">
-                <div
-                  className={`relative overflow-hidden rounded-[1.7rem] bg-gradient-to-br ${study.accent} p-5`}
-                >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.24),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.6),_transparent_40%)]" />
-                  <div className="relative flex min-h-72 flex-col justify-between gap-4">
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <p className="min-w-0 flex-1 break-words text-xs font-semibold uppercase tracking-[0.32em] text-white/80">
-                        {study.category}
-                      </p>
-                      <span className="flex-shrink-0 rounded-full border border-white/20 bg-slate-950/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-sm">
-                        Project Ready
-                      </span>
+              <article className="group section-surface noise-overlay relative overflow-hidden rounded-[2rem] transition duration-500 hover:-translate-y-1">
+                {/* Browser chrome + screenshot */}
+                <div className="overflow-hidden rounded-t-4xl">
+                  <div className="flex items-center gap-1.5 border-b border-white/8 bg-slate-900/80 px-4 py-2.5">
+                    <span className="h-2 w-2 rounded-full bg-red-400/60" />
+                    <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
+                    <span className="h-2 w-2 rounded-full bg-green-400/60" />
+                    <div className="ml-2 flex-1 truncate rounded bg-slate-800/80 px-3 py-1 text-[10px] text-slate-500">
+                      {study.url}
                     </div>
-                    <div className="rounded-[1.5rem] border border-white/15 bg-slate-950/55 p-5 backdrop-blur-md transition duration-500 group-hover:scale-[1.02] group-hover:border-cyan-300/35">
-                      <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.28em] text-white/65">
-                        <span>Project focus</span>
-                        <span>Web · Growth · Brand</span>
-                      </div>
-                      <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                        {["Creative direction", "Key metrics", "Business impact"].map((item) => (
-                          <div
-                            key={item}
-                            className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-3 text-xs text-white/70"
-                          >
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  </div>
+                  <div className="relative flex h-52 items-center justify-center overflow-hidden bg-slate-950">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_65%)]" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={study.logo}
+                      alt={`${study.title} logo`}
+                      className="relative z-10 max-h-24 w-auto max-w-50 object-contain drop-shadow-lg transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent" />
+                    <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 backdrop-blur-sm">
+                      {study.category}
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-5 px-4 pb-4 pt-6 sm:px-5 sm:pb-5">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                      Visual-led
-                    </span>
-                    <span className="rounded-full border border-fuchsia-300/20 bg-fuchsia-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-fuchsia-200">
-                      Results-first
-                    </span>
-                  </div>
+                {/* Content */}
+                <div className="space-y-4 px-5 pb-5 pt-5">
                   <div>
                     <h2 className="text-2xl font-semibold tracking-tight text-white transition duration-300 group-hover:text-cyan-200">
                       {study.title}
                     </h2>
                     <p className="mt-3 text-sm leading-7 text-slate-300">{study.summary}</p>
                   </div>
-
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-[1.35rem] border border-white/10 bg-slate-950/75 px-4 py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-                        Result Signals
-                      </p>
-                      <p className="mt-3 text-2xl font-semibold text-white">{study.results.length}</p>
-                      <p className="mt-2 text-xs leading-5 text-slate-400">
-                        Highlighted outcomes from the engagement.
-                      </p>
-                    </div>
-                    <div className="rounded-[1.35rem] border border-white/10 bg-slate-950/75 px-4 py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-                        Story Arc
-                      </p>
-                      <p className="mt-3 text-base font-semibold text-white">Challenge to growth</p>
-                      <p className="mt-2 text-xs leading-5 text-slate-400">
-                        Designed to explain what changed and why it mattered.
-                      </p>
-                    </div>
-                    <div className="rounded-[1.35rem] border border-white/10 bg-slate-950/75 px-4 py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
-                        Media Slots
-                      </p>
-                      <p className="mt-3 text-base font-semibold text-white">Static + motion</p>
-                      <p className="mt-2 text-xs leading-5 text-slate-400">
-                        Stills, motion, and interactive assets where relevant.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-3">
+                  <div className="flex flex-wrap gap-2 pt-1">
                     {study.results.map((result) => (
-                      <div
+                      <span
                         key={result}
-                        className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-200 transition duration-300 group-hover:border-white/15"
+                        className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs text-slate-300 transition duration-300 group-hover:border-white/20"
                       >
                         {result}
-                      </div>
+                      </span>
                     ))}
                   </div>
+                  <a
+                    href={study.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200 transition duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/14 hover:text-white"
+                  >
+                    Visit Website
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
                 </div>
               </article>
             </Reveal>
@@ -183,7 +147,7 @@ export default function WorkPage() {
       </SectionShell>
 
       <SectionShell>
-        <div className="section-surface noise-overlay relative overflow-hidden rounded-[2rem] p-8 sm:p-10 lg:p-12">
+        <div className="section-surface noise-overlay relative overflow-hidden rounded-4xl p-8 sm:p-10 lg:p-12">
           <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-cyan-400/14 blur-3xl" />
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <Reveal blur>

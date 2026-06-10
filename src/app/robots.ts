@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/"
     },
-    sitemap: "https://www.mjdm.agency/sitemap.xml"
+    sitemap: "https://www.mjdm.io/sitemap.xml"
   };
 }

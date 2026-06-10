@@ -113,20 +113,6 @@ export default function ContactPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.24} direction="left" blur>
-              <div className="relative overflow-hidden rounded-[2rem] border border-dashed border-white/15 bg-slate-950/70 p-6 text-sm leading-7 text-slate-300 shadow-[0_16px_50px_rgba(2,6,23,0.24)]">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                <p className="font-semibold uppercase tracking-[0.28em] text-fuchsia-200/80">
-                  Delivery Note
-                </p>
-                <p className="mt-4">
-                  Submissions are sent securely via Resend when{" "}
-                  <span className="font-mono text-slate-200">RESEND_API_KEY</span> is configured on
-                  the server. Use a verified{" "}
-                  <span className="font-mono text-slate-200">RESEND_FROM_EMAIL</span> in production.
-                </p>
-              </div>
-            </Reveal>
           </div>
         </div>
       </SectionShell>
