@@ -21,6 +21,14 @@ export function createMetadata({
     title,
     description,
     keywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true
+      }
+    },
     alternates: {
       canonical: absoluteUrl(path)
     },
