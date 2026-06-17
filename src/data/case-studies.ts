@@ -9,7 +9,7 @@ export const caseStudies = [
     summary:
       "Built a modern media and entertainment platform for a geek culture publication — content discovery, podcast integration, and a scalable brand system for a growing audience.",
     results: ["Multi-category content platform", "Podcast + social channel integration", "Mobile-optimized across all devices"],
-    accent: "from-fuchsia-500/30 via-violet-500/10 to-cyan-400/30"
+    accent: "from-pink-500/30 via-yellow-500/10 to-blue-500/30"
   },
   {
     slug: "icon-body-and-mind-coaching-site",
@@ -21,7 +21,7 @@ export const caseStudies = [
     summary:
       "Created a conversion-led coaching site for a Toronto-area personal training brand — clean service pages, transformation showcase, and a brand presence that matches the quality of the coaching.",
     results: ["Professional coaching brand online", "Clear service and program pathways", "Local search visibility for York Region"],
-    accent: "from-cyan-400/30 via-sky-500/10 to-violet-500/30"
+    accent: "from-blue-500/30 via-sky-500/10 to-yellow-500/30"
   },
   {
     slug: "ca-building-supply-b2b-site",
@@ -33,6 +33,6 @@ export const caseStudies = [
     summary:
       "Designed and built a professional B2B platform for an Ontario exterior materials supplier — product-led layout, contractor-first UX, and a clean brand presence for a competitive trade market.",
     results: ["Product catalogue with clear navigation", "Contractor-focused UX and messaging", "Professional credibility for B2B buyers"],
-    accent: "from-violet-500/30 via-fuchsia-500/10 to-blue-500/30"
+    accent: "from-yellow-500/30 via-pink-500/10 to-blue-500/30"
   }
 ];

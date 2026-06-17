@@ -3,29 +3,25 @@ import { Check } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionShell } from "@/components/ui/section-shell";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import {
+  PackagesHeroAside,
+  packageSections
+} from "@/components/sections/packages-hero-aside";
 import { Reveal } from "@/components/motion/reveal";
-
-const sections = [
-  { id: "web", label: "Web" },
-  { id: "marketing", label: "Digital Marketing" },
-  { id: "realestate", label: "Real Estate Video" },
-];
 
 function PackagesNav() {
   return (
-    <div className="sticky top-17 z-30 -mx-4 px-4 py-2 sm:static sm:mx-0 sm:flex sm:justify-center sm:px-0 sm:py-3">
-      <nav className="flex gap-1 overflow-x-auto rounded-full border border-white/10 bg-slate-950/90 p-1 shadow-[0_8px_32px_rgba(2,6,23,0.5)] backdrop-blur-md [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {sections.map(({ id, label }) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            className="shrink-0 rounded-full px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-slate-400 transition duration-200 hover:bg-white/8 hover:text-white sm:px-4 sm:text-xs sm:tracking-[0.22em]"
-          >
-            {label}
-          </a>
-        ))}
-      </nav>
-    </div>
+    <nav className="flex gap-1 overflow-x-auto rounded-xl border border-white/10 bg-black p-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-center">
+      {packageSections.map(({ id, label }) => (
+        <a
+          key={id}
+          href={`#${id}`}
+          className="shrink-0 rounded-lg px-4 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-slate-400 transition duration-200 hover:bg-white/8 hover:text-[#ffd700] sm:text-xs sm:tracking-[0.22em]"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
   );
 }
 
@@ -48,7 +44,7 @@ export const metadata = createMetadata({
 function CheckItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3 text-sm leading-7 text-slate-200">
-      <Check className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+      <Check className="mt-0.5 h-4 w-4 shrink-0 text-yellow-400" />
       <span>{children}</span>
     </li>
   );
@@ -68,14 +64,14 @@ function PackageCard({
   badge?: string;
 }) {
   return (
-    <div className="relative rounded-3xl border border-white/10 bg-slate-950/70 p-6 sm:p-8">
+    <div className="relative theme-card rounded-xl p-6 sm:p-8">
       {badge && (
-        <span className="absolute right-5 top-5 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+        <span className="absolute right-5 top-5 rounded-full border border-[#e91e8c]/40 bg-[#e91e8c]/10 px-3 py-1 text-xs font-bold text-[#ffd700]">
           {badge}
         </span>
       )}
       {eyebrow && (
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/70">{eyebrow}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#ffd700]">{eyebrow}</p>
       )}
       <h3 className="mt-2 text-xl font-semibold text-white sm:text-2xl">{title}</h3>
       {subtitle && <p className="mt-1 text-sm text-slate-400">{subtitle}</p>}
@@ -91,7 +87,7 @@ function PackageCard({
 function SectionHeading({ label, title, description }: { label: string; title: string; description: string }) {
   return (
     <div className="mb-10">
-      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">{label}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">{label}</p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">{title}</h2>
       <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">{description}</p>
     </div>
@@ -107,14 +103,14 @@ export default function PackagesPage() {
         description="From one-page websites to full social media management and real estate video — here is exactly what MJDM delivers across every service category."
         primaryCta={{ label: "Book a Discovery Call", href: "mailto:info@mjdm.io" }}
         secondaryCta={{ label: "Send an Inquiry", href: "/contact" }}
+        aside={<PackagesHeroAside />}
+        footer={<PackagesNav />}
       />
 
-      <PackagesNav />
-
       {/* ── WEBSITE DESIGN, DEVELOPMENT & SEO ───────────────────────── */}
-      <SectionShell id="web" className="pt-4">
+      <SectionShell id="web" className="!pb-14 !pt-6 sm:!pb-20 sm:!pt-8 lg:!pt-10">
         <Reveal blur>
-          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
+          <div className="theme-card rounded-xl p-5 sm:rounded-xl sm:p-10">
             <SectionHeading
               label="Website Design, Development & SEO"
               title="Build packages"
@@ -206,9 +202,9 @@ export default function PackagesPage() {
       </SectionShell>
 
       {/* ── DIGITAL MARKETING ────────────────────────────────────────── */}
-      <SectionShell id="marketing">
+      <SectionShell id="marketing" className="!py-14 sm:!py-20">
         <Reveal blur delay={0.06}>
-          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
+          <div className="theme-card rounded-xl p-5 sm:rounded-xl sm:p-10">
             <SectionHeading
               label="Social Media Management · Video Content · Paid Advertising"
               title="Digital marketing packages"
@@ -246,7 +242,7 @@ export default function PackagesPage() {
               />
             </div>
 
-            <div className="mt-10 rounded-3xl border border-white/10 bg-slate-950/50 p-6 sm:p-8">
+            <div className="mt-10 rounded-xl border border-white/10 bg-black p-6 sm:p-8">
               <h3 className="text-base font-semibold text-white">What's included in every package</h3>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
@@ -271,9 +267,9 @@ export default function PackagesPage() {
       </SectionShell>
 
       {/* ── REAL ESTATE VIDEO PRODUCTION ─────────────────────────────── */}
-      <SectionShell id="realestate">
+      <SectionShell id="realestate" className="!py-14 sm:!py-20">
         <Reveal blur delay={0.1}>
-          <div className="rounded-3xl border border-white/10 bg-white/3 p-5 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:rounded-4xl sm:p-10">
+          <div className="theme-card rounded-xl p-5 sm:rounded-xl sm:p-10">
             <SectionHeading
               label="Real Estate Video Production · Cinematic Property Content"
               title="Real estate packages"

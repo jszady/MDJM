@@ -56,7 +56,7 @@ export function SiteBreadcrumbs({ items, className = "" }: SiteBreadcrumbsProps)
               ) : (
                 <Link
                   href={item.href}
-                  className="font-medium text-cyan-300/90 transition hover:text-cyan-200"
+                  className="font-medium text-[#ffd700] transition hover:text-white"
                 >
                   {item.label}
                 </Link>

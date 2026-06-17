@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { navigationLinks } from "@/data/navigation";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Logo } from "@/components/brand/logo";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -15,25 +15,16 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-slate-950/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="shrink-0">
-          <Image
-            src="/logo.png"
-            alt="MJDM Logo"
-            width={360}
-            height={88}
-            priority
-            className="block h-8 w-auto object-contain brightness-0 invert sm:h-9"
-          />
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navigationLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-300 transition duration-300 hover:text-white"
+              className="text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-[#ffd700]"
             >
               {item.label}
             </Link>

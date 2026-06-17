@@ -59,7 +59,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "MJDM",
   url: "https://www.mjdm.io",
-  logo: "https://www.mjdm.io/logo.png",
+  logo: "https://www.mjdm.io/new-logo.png",
   description: siteConfig.longDescription,
   email: siteConfig.email,
   ...(siteConfig.socialLinks.length

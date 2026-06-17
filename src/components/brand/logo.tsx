@@ -12,18 +12,17 @@ export function Logo({ className }: LogoProps) {
       href="/"
       aria-label="MJDM home"
       className={cn(
-        "inline-flex shrink-0 items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
+        "inline-flex shrink-0 items-center outline-none focus-visible:ring-2 focus-visible:ring-[#ffd700]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
         className
       )}
     >
       <img
-        src="/logo.png"
-        alt="MJDM Logo"
-        width={220}
-        height={48}
-        className="h-8 w-auto sm:h-12"
+        src="/new-logo.png"
+        alt="MJDM"
+        width={260}
+        height={56}
+        className="block h-9 w-auto max-w-none sm:h-10"
       />
     </Link>
   );
 }
-

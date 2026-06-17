@@ -5,6 +5,7 @@ import Script from "next/script";
 import { services } from "@/data/services";
 import { getServicePageCopy } from "@/data/service-page-content";
 import { createMetadata } from "@/lib/metadata";
+import { iconStyles, textAccents } from "@/lib/theme";
 import { absoluteUrl } from "@/lib/utils";
 import { hasArticlePage } from "@/lib/blog";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -40,6 +41,12 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
+function ThemeBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`theme-card rounded-xl p-6 sm:p-8 ${className}`}>{children}</div>
+  );
+}
+
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const copy = getServicePageCopy(slug);
@@ -47,6 +54,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   if (!copy || !service) notFound();
 
+  const serviceIndex = services.findIndex((s) => s.slug === slug);
   const Icon = service.icon;
 
   const faqLd = {
@@ -105,95 +113,97 @@ export default async function ServiceDetailPage({ params }: Props) {
           />
 
           <div className="mt-10 flex flex-wrap items-start gap-6">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/80 text-cyan-300">
+            <div
+              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${iconStyles[serviceIndex % iconStyles.length]}`}
+            >
               <Icon className="h-6 w-6" />
             </div>
             <div className="min-w-0 max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">MJDM</p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">{copy.h1}</h1>
-              <p className="mt-8 text-base leading-8 text-slate-300 sm:text-lg">{copy.intro}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#ffd700]">MJDM</p>
+              <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">{copy.h1}</h1>
+              <p className="mt-8 text-base leading-8 text-slate-400 sm:text-lg">{copy.intro}</p>
             </div>
           </div>
         </Reveal>
       </SectionShell>
 
-      <SectionShell className="!py-16 sm:!py-20">
+      <SectionShell className="!py-12 sm:!py-16">
         <Reveal blur>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{copy.includesHeading}</h2>
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          <ThemeBlock>
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{copy.includesHeading}</h2>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {copy.includes.map((item) => (
                 <li
                   key={item}
-                  className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 px-5 py-5 text-sm leading-7 text-slate-200"
+                  className="flex gap-3 rounded-lg border border-white/10 bg-black px-4 py-4 text-sm leading-7 text-slate-300"
                 >
-                  {item}
+                  <span className="shrink-0 font-bold text-[#ffd700]">—</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </ThemeBlock>
         </Reveal>
       </SectionShell>
 
-      <SectionShell className="!py-16 sm:!py-20">
+      <SectionShell className="!py-12 sm:!py-16">
         <Reveal blur delay={0.06}>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{copy.valueHeading}</h2>
-            <div className="mt-8 space-y-6 text-base leading-8 text-slate-300">
+          <ThemeBlock>
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{copy.valueHeading}</h2>
+            <div className="mt-8 space-y-6 text-base leading-8 text-slate-400">
               {copy.valueParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </div>
+          </ThemeBlock>
         </Reveal>
       </SectionShell>
 
-      <SectionShell className="!py-16 sm:!py-20">
+      <SectionShell className="!py-12 sm:!py-16">
         <Reveal blur delay={0.1}>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{copy.processHeading}</h2>
-            <ol className="mt-10 grid gap-6 md:grid-cols-2">
+          <ThemeBlock>
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{copy.processHeading}</h2>
+            <ol className="mt-8 grid gap-4 md:grid-cols-2">
               {copy.processSteps.map((step, i) => (
-                <li
-                  key={step.title}
-                  className="relative rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-6 pl-14"
-                >
-                  <span className="absolute left-5 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-sm font-semibold text-cyan-200">
+                <li key={step.title} className="relative theme-card rounded-xl p-5 pl-14">
+                  <span
+                    className={`absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-black text-sm font-bold ${textAccents[i % textAccents.length]}`}
+                  >
                     {i + 1}
                   </span>
-                  <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">{step.body}</p>
+                  <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-400">{step.body}</p>
                 </li>
               ))}
             </ol>
-          </div>
+          </ThemeBlock>
         </Reveal>
       </SectionShell>
 
-      <SectionShell className="!py-16 sm:!py-20">
+      <SectionShell className="!py-12 sm:!py-16">
         <Reveal blur delay={0.14}>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{copy.faqHeading}</h2>
-            <div className="mt-8 space-y-4">
+          <ThemeBlock>
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{copy.faqHeading}</h2>
+            <div className="mt-8 space-y-3">
               {copy.faqs.map((faq) => (
-                <div
-                  key={faq.question}
-                  className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 px-5 py-5 sm:px-6 sm:py-6"
-                >
-                  <h3 className="text-base font-semibold text-white">{faq.question}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">{faq.answer}</p>
+                <div key={faq.question} className="rounded-lg border border-white/10 bg-black px-5 py-5 sm:px-6">
+                  <h3 className="text-base font-bold text-white">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-400">{faq.answer}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </ThemeBlock>
         </Reveal>
       </SectionShell>
 
-      <SectionShell className="!py-16 sm:!py-20">
+      <SectionShell className="!py-12 sm:!py-16">
         <Reveal blur delay={0.18}>
-          <div className="rounded-[2rem] border border-cyan-400/15 bg-gradient-to-br from-slate-950/90 via-slate-950/80 to-fuchsia-950/20 p-8 sm:p-10">
-            <h2 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">Related services & reading</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+          <ThemeBlock>
+            <div className="h-1 w-12 bg-[#e91e8c]" />
+            <h2 className="mt-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              Related services & reading
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
               Explore complementary capabilities on dedicated pages, or dive into MJDM insights where they support
               this service.
             </p>
@@ -201,33 +211,36 @@ export default async function ServiceDetailPage({ params }: Props) {
               <ButtonLink href="/services" variant="secondary">
                 All services
               </ButtonLink>
-              {relatedServices.map((s) => {
+              {relatedServices.map((s, i) => {
                 const RelIcon = s.icon;
                 return (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2.5 text-sm font-medium text-white transition hover:border-cyan-300/35 hover:text-cyan-200"
+                    className="inline-flex items-center gap-2 rounded-xl border-2 border-white/10 bg-black px-4 py-2.5 text-sm font-bold text-white transition-colors duration-200 hover:border-[#ffd700]/50 hover:text-[#ffd700]"
                   >
-                    <RelIcon className="h-4 w-4 text-cyan-300/90" />
+                    <RelIcon className={`h-4 w-4 ${textAccents[i % textAccents.length]}`} />
                     {s.title}
                   </Link>
                 );
               })}
             </div>
             {copy.relatedBlog.length ? (
-              <ul className="mt-8 space-y-3 text-sm text-slate-300">
+              <ul className="mt-8 space-y-3 text-sm text-slate-400">
                 {copy.relatedBlog.map((b) => (
                   <li key={b.slug}>
                     {hasArticlePage(b.slug) ? (
                       <Link
                         href={`/blog/${b.slug}`}
-                        className="font-medium text-cyan-300/90 underline-offset-4 transition hover:text-cyan-200 hover:underline"
+                        className="font-bold text-[#ffd700] underline-offset-4 transition-colors hover:text-white hover:underline"
                       >
                         {b.title}
                       </Link>
                     ) : (
-                      <Link href="/blog" className="font-medium text-cyan-300/90 underline-offset-4 hover:underline">
+                      <Link
+                        href="/blog"
+                        className="font-bold text-[#ffd700] underline-offset-4 hover:underline"
+                      >
                         {b.title}
                       </Link>
                     )}
@@ -235,7 +248,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 ))}
               </ul>
             ) : null}
-          </div>
+          </ThemeBlock>
         </Reveal>
       </SectionShell>
 

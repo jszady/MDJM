@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "MJDM",
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/logo.png")
+        url: absoluteUrl("/new-logo.png")
       }
     },
     mainEntityOfPage: {
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <header className="mt-8">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-200">
+              <span className="rounded-lg border border-white/10 bg-black px-3 py-1 text-[11px] font-bold uppercase tracking-[0.28em] text-[#ffd700]">
                 {post.category}
               </span>
               <span className="rounded-full border border-white/10 bg-slate-950/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-400">
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
             <p className="mt-4 text-sm font-medium text-slate-400">
               By{" "}
-              <a href="/about#team" className="text-cyan-300/90 transition hover:text-cyan-200">
+              <a href="/about#team" className="font-bold text-[#ffd700] transition hover:text-white">
                 {authorName}
               </a>
             </p>
@@ -146,11 +146,8 @@ export default async function BlogPostPage({ params }: Props) {
 
           <article
             data-article-content
-            className="article-container relative mt-14 overflow-hidden rounded-[2.25rem] border border-cyan-400/10 bg-white/2 p-10 shadow-[0_0_0_1px_rgba(103,232,249,0.08),0_20px_80px_rgba(5,10,30,0.35),inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl sm:p-14"
+            className="article-container theme-card relative mt-14 overflow-hidden rounded-xl p-10 sm:p-14"
           >
-            <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-fuchsia-500/10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-cyan-500/8 blur-3xl" />
-            <div className="noise-overlay absolute inset-0" />
             <div className="relative">
               <ArticleContent blocks={content} />
               <ArticleFooter title={post.title} slug={slug} />

@@ -7,7 +7,7 @@ import { Logo } from "@/components/brand/logo";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-slate-950/80">
+    <footer className="border-t border-white/10 bg-black">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.35fr_1fr_1fr_1fr] lg:px-8">
         <div className="space-y-5">
           <Logo />
@@ -15,7 +15,7 @@ export function SiteFooter() {
           {siteConfig.socialLinks.length ? (
             <div className="flex flex-wrap gap-4 text-sm text-slate-300">
               {siteConfig.socialLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="transition duration-300 hover:text-cyan-200/90">
+                <Link key={item.label} href={item.href} className="transition duration-300 hover:text-[#ffd700]">
                   {item.label}
                 </Link>
               ))}
@@ -29,7 +29,7 @@ export function SiteFooter() {
           </h3>
           <div className="mt-5 grid gap-3 text-sm text-slate-300">
             {navigationLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="transition duration-300 hover:text-cyan-200/90">
+              <Link key={item.href} href={item.href} className="transition duration-300 hover:text-[#ffd700]">
                 {item.label}
               </Link>
             ))}
@@ -45,7 +45,7 @@ export function SiteFooter() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="transition duration-300 hover:text-cyan-200/90"
+                className="transition duration-300 hover:text-[#ffd700]"
               >
                 {service.title}
               </Link>
@@ -58,7 +58,7 @@ export function SiteFooter() {
             Contact
           </h3>
           <div className="mt-5 grid gap-3 text-sm text-slate-300">
-            <Link href={`mailto:${siteConfig.email}`} className="transition duration-300 hover:text-cyan-200/90">
+            <Link href={`mailto:${siteConfig.email}`} className="transition duration-300 hover:text-[#ffd700]">
               {siteConfig.email}
             </Link>
             {siteConfig.phone ? <p>{siteConfig.phone}</p> : null}
@@ -70,7 +70,7 @@ export function SiteFooter() {
             {siteConfig.businessHours?.map((line) => (
               <p key={line}>{line}</p>
             ))}
-            <Link href="/blog" className="transition duration-300 hover:text-cyan-200/90">
+            <Link href="/blog" className="transition duration-300 hover:text-[#ffd700]">
               Insights & Journal
             </Link>
           </div>

@@ -9,16 +9,17 @@ type CtaBannerProps = {
 export function CtaBanner({ title, description }: CtaBannerProps) {
   return (
     <SectionShell>
-      <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(17,24,39,0.98),rgba(37,99,235,0.14),rgba(168,85,247,0.18))] p-5 shadow-[0_30px_100px_rgba(8,12,30,0.55)] transition duration-500 ease-out hover:shadow-[0_0_60px_rgba(168,85,247,0.12),0_30px_100px_rgba(8,12,30,0.55)] sm:rounded-[2rem] sm:p-10 lg:p-14">
-        <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="theme-card rounded-xl p-6 sm:p-10 lg:p-12">
+        <div className="h-1 w-16 bg-[#e91e8c]" />
+        <div className="mt-6 flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-cyan-300/80 sm:text-xs sm:tracking-[0.35em]">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#ffd700]">
               Start Stronger
             </p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-5xl">
               {title}
             </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-200/90 sm:mt-5 sm:text-lg">{description}</p>
+            <p className="mt-4 text-sm leading-7 text-slate-400 sm:mt-5 sm:text-lg">{description}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <ButtonLink href="/contact" arrow className="w-full justify-center sm:w-auto">

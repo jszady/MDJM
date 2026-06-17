@@ -2,10 +2,12 @@ import Link from "next/link";
 
 import { services } from "@/data/services";
 import { createMetadata } from "@/lib/metadata";
+import { accentBars, iconStyles } from "@/lib/theme";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionShell } from "@/components/ui/section-shell";
 import { ButtonLink } from "@/components/ui/button-link";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { ServicesHeroAside } from "@/components/sections/services-hero-aside";
 
 export const metadata = createMetadata({
   title: "Web Design, SEO & Social Media Services",
@@ -30,49 +32,48 @@ export default function ServicesPage() {
         description="MJDM brings websites, content, social, and growth strategy together so businesses do not have to piece together disconnected execution."
         primaryCta={{ label: "Book a Discovery Call", href: "mailto:info@mjdm.io" }}
         secondaryCta={{ label: "Send an Inquiry", href: "/contact" }}
+        featureChips={["Web design & dev", "SEO & content", "Social & video"]}
+        aside={<ServicesHeroAside />}
       />
 
       <SectionShell className="pt-4">
-        <div className="grid gap-6">
-          {services.map((service) => {
+        <div className="grid gap-5">
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <section
-                key={service.slug}
-                id={service.slug}
-                className="rounded-4xl border border-white/10 bg-white/3 p-8 shadow-[0_20px_70px_rgba(5,10,30,0.35)] sm:p-10"
-              >
-                <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+              <section key={service.slug} id={service.slug} className="theme-card overflow-hidden rounded-xl">
+                <div className={`h-1 w-full ${accentBars[index % accentBars.length]}`} />
+                <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
                   <div>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/80 text-cyan-300">
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-lg ${iconStyles[index % iconStyles.length]}`}
+                    >
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h2 className="mt-6 text-3xl font-semibold text-white">
+                    <h2 className="mt-6 text-3xl font-bold text-white">
                       <Link
                         href={`/services/${service.slug}`}
-                        className="transition duration-300 hover:text-cyan-200"
+                        className="transition-colors duration-200 hover:text-[#ffd700]"
                       >
                         {service.title}
                       </Link>
                     </h2>
-                    <p className="mt-4 text-base leading-7 text-slate-300">{service.description}</p>
+                    <p className="mt-4 text-base leading-7 text-slate-400">{service.description}</p>
                     <div className="mt-6">
                       <ButtonLink href={`/services/${service.slug}`} variant="secondary" className="px-5 py-2.5">
                         View service page
                       </ButtonLink>
                     </div>
                   </div>
-                  <div className="grid gap-4">
+                  <ul className="space-y-3">
                     {service.benefits.map((benefit) => (
-                      <div
-                        key={benefit}
-                        className="rounded-3xl border border-white/10 bg-slate-950/70 px-5 py-5 text-slate-200"
-                      >
-                        {benefit}
-                      </div>
+                      <li key={benefit} className="flex gap-3 rounded-lg border border-white/10 bg-black px-4 py-4 text-sm leading-7 text-slate-300">
+                        <span className="shrink-0 font-bold text-[#ffd700]">—</span>
+                        <span>{benefit}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </section>
             );

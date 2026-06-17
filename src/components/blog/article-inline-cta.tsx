@@ -11,20 +11,15 @@ export function ArticleInlineCta({ variant = "mid" }: ArticleInlineCtaProps) {
   const isMid = variant === "mid";
 
   return (
-    <div
-      className={
-        isMid
-          ? "my-12 rounded-[1.5rem] border border-cyan-400/20 bg-gradient-to-br from-slate-950/95 via-slate-900/80 to-fuchsia-950/25 p-6 shadow-[0_0_40px_rgba(103,232,249,0.08)] sm:p-8"
-          : "mt-12 rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 sm:p-8"
-      }
-    >
-      <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300/85">
+    <div className={`theme-card rounded-xl p-6 sm:p-8 ${isMid ? "my-12" : "mt-12"}`}>
+      <div className="h-1 w-10 bg-[#e91e8c]" />
+      <p className="mt-4 text-xs font-bold uppercase tracking-[0.32em] text-[#ffd700]">
         {isMid ? "Work with MJDM" : "Next step"}
       </p>
-      <p className="mt-3 text-lg font-semibold tracking-tight text-white sm:text-xl">
+      <p className="mt-3 text-lg font-bold tracking-tight text-white sm:text-xl">
         {isMid ? "Turn this into a project your market will feel." : "Ready when you are."}
       </p>
-      <p className="mt-2 max-w-xl text-sm leading-7 text-slate-300">
+      <p className="mt-2 max-w-xl text-sm leading-7 text-slate-400">
         {isMid
           ? "Tell us what you are launching or fixing—we respond with a clear plan, timeline, and commercial focus."
           : "Book a call or send a brief—MJDM replies within one business day with practical next steps."}

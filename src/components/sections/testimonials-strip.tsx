@@ -6,6 +6,8 @@ import { testimonials } from "@/data/testimonials";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SectionShell } from "@/components/ui/section-shell";
 
+const barColors = ["bg-[#e91e8c]", "bg-[#ffd700]", "bg-[#2563eb]"] as const;
+
 export function TestimonialsStrip() {
   return (
     <SectionShell>
@@ -16,21 +18,24 @@ export function TestimonialsStrip() {
         align="center"
       />
 
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
+      <div className="mt-12 grid gap-4 lg:grid-cols-3">
         {testimonials.map((item, index) => (
           <motion.blockquote
             key={item.name}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.6, delay: index * 0.08 }}
-            className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-left shadow-[0_20px_70px_rgba(5,10,30,0.35)] transition duration-400 ease-out hover:-translate-y-1 hover:border-cyan-300/15 hover:shadow-[0_0_40px_rgba(103,232,249,0.06),0_20px_70px_rgba(5,10,30,0.35)]"
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            className="theme-card overflow-hidden rounded-xl text-left"
           >
-            <p className="text-base leading-8 text-slate-200">“{item.quote}”</p>
-            <footer className="mt-8">
-              <p className="font-semibold text-white">{item.name}</p>
-              <p className="text-sm text-slate-400">{item.role}</p>
-            </footer>
+            <div className={`h-1 w-full ${barColors[index % barColors.length]}`} />
+            <div className="p-6">
+              <p className="text-base leading-8 text-slate-300">"{item.quote}"</p>
+              <footer className="mt-6 border-t border-white/8 pt-4">
+                <p className="font-bold text-white">{item.name}</p>
+                <p className="text-sm text-slate-500">{item.role}</p>
+              </footer>
+            </div>
           </motion.blockquote>
         ))}
       </div>

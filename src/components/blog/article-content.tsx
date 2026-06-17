@@ -34,7 +34,7 @@ function renderParagraphWithLinks(text: string): ReactNode {
       <Link
         key={`inl-${key++}`}
         href={m[2]}
-        className="font-medium text-cyan-300/90 underline decoration-cyan-400/40 underline-offset-[3px] transition hover:text-cyan-200 hover:decoration-cyan-300/70"
+        className="font-medium text-[#ffd700] underline decoration-[#2563eb]/40 underline-offset-[3px] transition hover:text-white hover:decoration-[#ffd700]/70"
       >
         {m[1]}
       </Link>
@@ -122,7 +122,7 @@ export function ArticleContent({
                 {block.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <span
-                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400/70 shadow-[0_0_8px_rgba(103,232,249,0.5)]"
+                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ffd700]"
                       aria-hidden
                     />
                     <span className="text-[17px] leading-[1.85] text-slate-200 sm:text-lg sm:leading-[1.9]">
@@ -154,7 +154,7 @@ export function ArticleContent({
         if (block.type === "image") {
           return wrap(
             <BlockReveal reduceMotion={!!reduceMotion}>
-              <figure className="article-image-slot my-10 overflow-hidden rounded-[1.5rem] border border-white/10 shadow-[0_0_40px_rgba(103,232,249,0.08)]">
+              <figure className="article-image-slot my-10 overflow-hidden rounded-xl border border-white/10">
                 {block.src ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img

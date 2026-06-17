@@ -18,10 +18,8 @@ export function HeroVisual({ reduceMotion = false }: HeroVisualProps) {
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current || reduceMotion) return;
     const rect = ref.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    mouseX.set(x);
-    mouseY.set(y);
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
   };
 
   const handleMouseLeave = () => {
@@ -41,9 +39,8 @@ export function HeroVisual({ reduceMotion = false }: HeroVisualProps) {
       transition={{ duration: reduceMotion ? 0.01 : 0.75, delay: reduceMotion ? 0 : 0.28, ease: [0.16, 1, 0.3, 1] }}
       className="relative mx-auto flex aspect-square w-full max-w-[38rem] items-center justify-center"
     >
-      {/* Backdrop glow — slow loop */}
       <motion.div
-        className="absolute inset-[6%] rounded-[3rem] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.12),transparent_38%)] blur-2xl"
+        className="absolute inset-[6%] rounded-[3rem] bg-[radial-gradient(circle_at_top,rgba(233,30,140,0.12),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.12),transparent_38%)] blur-2xl"
         animate={{ scale: [1, 1.04, 1], rotate: [0, 6, 0] }}
         transition={{ duration: dur(17), repeat: Infinity, ease: "easeInOut" }}
       />
@@ -53,42 +50,41 @@ export function HeroVisual({ reduceMotion = false }: HeroVisualProps) {
         transition={{ duration: dur(20), repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute inset-[16%] rounded-[2.5rem] border border-cyan-300/18 bg-[linear-gradient(140deg,rgba(34,211,238,0.14),rgba(139,92,246,0.1),rgba(217,70,239,0.18))] shadow-[0_0_90px_rgba(99,102,241,0.16)]"
+        className="absolute inset-[16%] rounded-[2.5rem] border border-[#e91e8c]/20 bg-[linear-gradient(140deg,rgba(233,30,140,0.1),rgba(255,215,0,0.08),rgba(37,99,235,0.12))]"
         animate={{ rotate: [0, -8, 0], scale: [1, 1.02, 1] }}
         transition={{ duration: dur(15), repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[10%] top-[8%] h-24 w-24 rounded-full border border-fuchsia-300/20 bg-fuchsia-300/[0.03]"
+        className="absolute right-[10%] top-[8%] h-24 w-24 rounded-full border border-[#e91e8c]/20 bg-[#e91e8c]/5"
         animate={{ y: [0, -12, 0], x: [0, 6, 0] }}
         transition={{ duration: dur(11), repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-[10%] left-[6%] h-16 w-36 rounded-full border border-cyan-300/20 bg-cyan-300/[0.04]"
+        className="absolute bottom-[10%] left-[6%] h-16 w-36 rounded-full border border-blue-300/20 bg-blue-300/[0.04]"
         animate={{ x: [0, 10, 0], y: [0, -8, 0] }}
         transition={{ duration: dur(14), repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Main panel — subtle parallax */}
       <motion.div
         style={{ x: parallaxX, y: parallaxY }}
-        className="relative z-10 w-[80%] overflow-hidden rounded-[2.35rem] border border-white/12 bg-slate-950/82 p-5 shadow-[0_35px_120px_rgba(5,10,30,0.66)] soft-outline backdrop-blur-xl sm:p-6"
+        className="relative z-10 w-[80%] overflow-hidden rounded-[2.35rem] border border-white/12 bg-black/85 p-5 shadow-[0_35px_120px_rgba(0,0,0,0.66)] soft-outline backdrop-blur-xl sm:p-6"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.08),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(233,30,140,0.08),transparent_30%)]" />
         <div className="relative grid gap-4">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <motion.span
-                className="h-2.5 w-2.5 rounded-full bg-fuchsia-400 shadow-[0_0_18px_rgba(232,121,249,0.9)]"
+                className="h-2.5 w-2.5 rounded-full bg-[#e91e8c]"
                 animate={{ opacity: [0.8, 1, 0.8] }}
                 transition={{ duration: dur(4), repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.span
-                className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.9)]"
+                className="h-2.5 w-2.5 rounded-full bg-[#ffd700]"
                 animate={{ opacity: [0.85, 1, 0.85] }}
                 transition={{ duration: dur(5.2), repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
               />
               <motion.span
-                className="h-2.5 w-2.5 rounded-full bg-violet-400 shadow-[0_0_18px_rgba(167,139,250,0.9)]"
+                className="h-2.5 w-2.5 rounded-full bg-[#2563eb]"
                 animate={{ opacity: [0.85, 1, 0.85] }}
                 transition={{ duration: dur(4.8), repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
               />
@@ -104,7 +100,7 @@ export function HeroVisual({ reduceMotion = false }: HeroVisualProps) {
             </div>
             <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/8">
               <motion.div
-                className="h-3 rounded-full bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 shadow-[0_0_24px_rgba(103,232,249,0.35)]"
+                className="h-3 rounded-full bg-gradient-to-r from-[#e91e8c] via-[#ffd700] to-[#2563eb]"
                 initial={{ width: "28%" }}
                 animate={{ width: ["36%", "88%", "62%", "36%"] }}
                 transition={{ duration: dur(12), repeat: Infinity, ease: "easeInOut" }}
@@ -130,11 +126,11 @@ export function HeroVisual({ reduceMotion = false }: HeroVisualProps) {
                 </div>
               </div>
               <div className="grid gap-3 sm:grid-cols-[0.9fr_1.1fr]">
-                <div className="rounded-[1.35rem] border border-cyan-300/16 bg-cyan-300/[0.04] p-4">
+                <div className="rounded-[1.35rem] border border-yellow-400/16 bg-yellow-400/[0.04] p-4">
                   <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Speed</p>
                   <p className="mt-2 text-2xl font-semibold text-white">Fast</p>
                 </div>
-                <div className="rounded-[1.35rem] border border-fuchsia-300/16 bg-fuchsia-300/[0.04] p-4">
+                <div className="rounded-[1.35rem] border border-[#2563eb]/20 bg-[#2563eb]/5 p-4">
                   <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Conversion layer</p>
                   <p className="mt-2 text-base font-medium text-white">
                     Built to look expensive and act like a sales asset.

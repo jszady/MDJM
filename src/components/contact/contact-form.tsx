@@ -20,6 +20,9 @@ const initialValues: ContactFormValues = {
   message: ""
 };
 
+const inputClass =
+  "rounded-xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition duration-200 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb]/40";
+
 export function ContactForm() {
   const [values, setValues] = useState(initialValues);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -55,38 +58,32 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="section-surface noise-overlay relative overflow-hidden rounded-[1.5rem] p-5 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:rounded-[2rem] sm:p-8"
-    >
-      <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-fuchsia-500/14 blur-3xl" />
-      <div className="pointer-events-none absolute left-0 top-10 h-32 w-32 rounded-full bg-cyan-400/12 blur-3xl" />
-      <div className="relative">
-        <div className="mb-6 rounded-[1.6rem] border border-white/10 bg-slate-950/65 p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
-            Start The Conversation
-          </p>
-          <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-[2rem]">
-            Tell MJDM where your brand needs to get sharper.
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-slate-300">
-            Share your goals, current gaps, or launch plans. The response will be focused on what
-            matters most and what the next move should be.
-          </p>
-        </div>
+    <form onSubmit={handleSubmit} className="theme-card rounded-xl p-5 sm:p-8">
+      <div className="mb-6 rounded-xl border border-white/10 bg-black p-5">
+        <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">
+          Start The Conversation
+        </p>
+        <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-[2rem]">
+          Tell MJDM where your brand needs to get sharper.
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-slate-400">
+          Share your goals, current gaps, or launch plans. The response will be focused on what
+          matters most and what the next move should be.
+        </p>
+      </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className="grid gap-2 text-sm text-slate-300">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm text-slate-300">
           Name
           <input
             required
             value={values.name}
             onChange={(event) => setValues((current) => ({ ...current, name: event.target.value }))}
-            className="rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
+            className={inputClass}
             placeholder="Your name"
           />
-          </label>
-          <label className="grid gap-2 text-sm text-slate-300">
+        </label>
+        <label className="grid gap-2 text-sm text-slate-300">
           Company
           <input
             required
@@ -94,32 +91,32 @@ export function ContactForm() {
             onChange={(event) =>
               setValues((current) => ({ ...current, company: event.target.value }))
             }
-            className="rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
+            className={inputClass}
             placeholder="Company name"
           />
-          </label>
-        </div>
+        </label>
+      </div>
 
-        <div className="mt-5 grid gap-5 sm:grid-cols-2">
-          <label className="grid min-w-0 gap-2 text-sm text-slate-300">
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        <label className="grid min-w-0 gap-2 text-sm text-slate-300">
           Email
           <input
             type="email"
             required
             value={values.email}
             onChange={(event) => setValues((current) => ({ ...current, email: event.target.value }))}
-            className="rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
+            className={inputClass}
             placeholder="you@company.com"
           />
-          </label>
-          <label className="grid min-w-0 gap-2 text-sm text-slate-300">
+        </label>
+        <label className="grid min-w-0 gap-2 text-sm text-slate-300">
           Service Needed
           <select
             value={values.serviceNeeded}
             onChange={(event) =>
               setValues((current) => ({ ...current, serviceNeeded: event.target.value }))
             }
-            className="w-full rounded-2xl border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
+            className={`w-full ${inputClass}`}
           >
             {services.map((service) => (
               <option key={service.slug} value={service.title}>
@@ -127,51 +124,50 @@ export function ContactForm() {
               </option>
             ))}
           </select>
-          </label>
-        </div>
-
-        <label className="mt-5 grid gap-2 text-sm text-slate-300">
-          Message
-          <textarea
-            required
-            rows={6}
-            value={values.message}
-            onChange={(event) =>
-              setValues((current) => ({ ...current, message: event.target.value }))
-            }
-            className="rounded-[1.5rem] border border-white/10 bg-slate-950/85 px-4 py-3 text-white outline-none transition duration-300 focus:border-cyan-300/60 focus:shadow-[0_0_0_1px_rgba(103,232,249,0.25),0_0_30px_rgba(103,232,249,0.12)]"
-            placeholder="Tell MJDM what you are launching, what feels outdated, and what success would look like."
-          />
         </label>
-
-        <div className="mt-6 flex flex-col gap-4">
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="inline-flex w-full items-center justify-center rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.95),rgba(217,70,239,0.9))] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35),0_0_60px_rgba(236,72,153,0.12)] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(139,92,246,0.45),0_0_80px_rgba(236,72,153,0.2)] hover:border-violet-300/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-          >
-            {status === "loading" ? "Sending..." : "Request a response"}
-          </button>
-          <p className="text-center text-sm text-slate-400 sm:text-left">
-            Prefer email?{" "}
-            <a href="mailto:info@mjdm.io" className="text-cyan-300/90 underline-offset-2 hover:underline">
-              info@mjdm.io
-            </a>
-          </p>
-        </div>
-
-        {feedback ? (
-          <div
-            className={`mt-5 rounded-2xl border px-4 py-3 text-sm ${
-              status === "success"
-                ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-200"
-                : "border-rose-400/30 bg-rose-400/10 text-rose-200"
-            }`}
-          >
-            {feedback}
-          </div>
-        ) : null}
       </div>
+
+      <label className="mt-5 grid gap-2 text-sm text-slate-300">
+        Message
+        <textarea
+          required
+          rows={6}
+          value={values.message}
+          onChange={(event) =>
+            setValues((current) => ({ ...current, message: event.target.value }))
+          }
+          className={inputClass}
+          placeholder="Tell MJDM what you are launching, what feels outdated, and what success would look like."
+        />
+      </label>
+
+      <div className="mt-6 flex flex-col gap-4">
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="inline-flex w-full items-center justify-center rounded-xl border-2 border-[#ffd700] bg-[#ffd700] px-5 py-3 text-sm font-bold text-black transition-colors duration-200 hover:border-[#ffe566] hover:bg-[#ffe566] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffd700]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        >
+          {status === "loading" ? "Sending..." : "Request a response"}
+        </button>
+        <p className="text-center text-sm text-slate-400 sm:text-left">
+          Prefer email?{" "}
+          <a href="mailto:info@mjdm.io" className="font-bold text-[#ffd700] underline-offset-2 hover:underline">
+            info@mjdm.io
+          </a>
+        </p>
+      </div>
+
+      {feedback ? (
+        <div
+          className={`mt-5 rounded-xl border px-4 py-3 text-sm ${
+            status === "success"
+              ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-200"
+              : "border-rose-400/30 bg-rose-400/10 text-rose-200"
+          }`}
+        >
+          {feedback}
+        </div>
+      ) : null}
     </form>
   );
 }

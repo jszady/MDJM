@@ -45,7 +45,7 @@ export function ReadingProgressBar() {
       aria-label="Reading progress"
     >
       <div
-        className="h-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 shadow-[0_0_12px_rgba(139,92,246,0.5)] transition-all duration-150 ease-out"
+        className="h-full bg-gradient-to-r from-[#e91e8c] via-[#ffd700] to-[#2563eb] transition-all duration-150 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>

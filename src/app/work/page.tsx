@@ -58,7 +58,7 @@ export default function WorkPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <Reveal blur>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">
                 Selected Case Studies
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -71,8 +71,8 @@ export default function WorkPage() {
             </div>
           </Reveal>
           <Reveal delay={0.08} direction="left" blur>
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/3 p-5 text-sm leading-7 text-slate-300 shadow-[0_16px_50px_rgba(2,6,23,0.3)] lg:max-w-sm">
-              <p className="font-semibold uppercase tracking-[0.28em] text-fuchsia-200/80">
+            <div className="theme-card rounded-xl p-5 text-sm leading-7 text-slate-300 lg:max-w-sm">
+              <p className="font-bold uppercase tracking-[0.28em] text-[#ffd700]">
                 How to read these studies
               </p>
               <p className="mt-3">
@@ -86,7 +86,7 @@ export default function WorkPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((study, index) => (
             <Reveal key={study.slug} delay={index * 0.08} blur>
-              <article className="group section-surface noise-overlay relative overflow-hidden rounded-4xl transition duration-500 hover:-translate-y-1">
+              <article className="group theme-card overflow-hidden rounded-xl transition duration-300 hover:border-[#ffd700]/30">
                 {/* Browser chrome + screenshot */}
                 <div className="overflow-hidden rounded-t-4xl">
                   <div className="flex items-center gap-1.5 border-b border-white/8 bg-slate-900/80 px-4 py-2.5">
@@ -115,7 +115,7 @@ export default function WorkPage() {
                 {/* Content */}
                 <div className="space-y-4 px-5 pb-5 pt-5">
                   <div>
-                    <h2 className="text-2xl font-semibold tracking-tight text-white transition duration-300 group-hover:text-cyan-200">
+                    <h2 className="text-2xl font-bold tracking-tight text-white transition duration-200 group-hover:text-[#ffd700]">
                       {study.title}
                     </h2>
                     <p className="mt-3 text-sm leading-7 text-slate-300">{study.summary}</p>
@@ -134,7 +134,7 @@ export default function WorkPage() {
                     href={study.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200 transition duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/14 hover:text-white"
+                    className="mt-2 inline-flex items-center gap-2 rounded-xl border-2 border-[#2563eb] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white transition duration-200 hover:border-[#ffd700] hover:text-[#ffd700]"
                   >
                     Visit Website
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -147,12 +147,11 @@ export default function WorkPage() {
       </SectionShell>
 
       <SectionShell>
-        <div className="section-surface noise-overlay relative overflow-hidden rounded-4xl p-8 sm:p-10 lg:p-12">
-          <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-cyan-400/14 blur-3xl" />
-          <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="theme-card rounded-xl p-8 sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <Reveal blur>
               <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
+                <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">
                   Built To Scale
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">

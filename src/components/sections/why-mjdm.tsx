@@ -10,6 +10,8 @@ const reasons = [
   "A consistent brand presence across website, content, paid campaigns, and social channels."
 ];
 
+const numberColors = ["text-[#e91e8c]", "text-[#ffd700]", "text-[#2563eb]", "text-[#e91e8c]", "text-[#ffd700]"] as const;
+
 export function WhyMjdm() {
   return (
     <SectionShell>
@@ -20,11 +22,13 @@ export function WhyMjdm() {
           description="MJDM is built for brands that do not want fragmented freelancers, generic templates, or disconnected creative decisions."
         />
 
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {reasons.map((reason, index) => (
             <Reveal key={reason} delay={index * 0.06} direction="right" blur>
-              <div className="section-surface rounded-[1.7rem] px-5 py-5 text-slate-200 transition duration-400 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(103,232,249,0.06)]">
-                <span className="mr-3 inline-block min-w-8 text-cyan-300">0{index + 1}</span>
+              <div className="theme-card rounded-xl px-5 py-4 text-slate-300">
+                <span className={`mr-3 inline-block min-w-8 font-bold ${numberColors[index % numberColors.length]}`}>
+                  0{index + 1}
+                </span>
                 {reason}
               </div>
             </Reveal>

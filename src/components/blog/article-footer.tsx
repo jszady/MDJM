@@ -14,7 +14,7 @@ function ShareIcon({ href, label, children }: { href: string; label: string; chi
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition duration-300 hover:border-cyan-400/40 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(103,232,249,0.15)]"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black text-slate-400 transition duration-200 hover:border-[#ffd700]/50 hover:text-[#ffd700]"
     >
       {children}
     </a>
@@ -27,18 +27,17 @@ export function ArticleFooter({ title, slug }: ArticleFooterProps) {
   const encodedTitle = encodeURIComponent(title);
 
   return (
-    <footer className="article-footer relative mt-16 overflow-hidden rounded-[1.5rem] border border-cyan-400/15 bg-white/[0.03] px-6 py-8 backdrop-blur-md sm:px-8 sm:py-10">
-      <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-fuchsia-500/8 blur-2xl" />
-      <div className="relative flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="article-footer theme-card relative mt-16 overflow-hidden rounded-xl px-6 py-8 sm:px-8 sm:py-10">
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-slate-500">
             Author
           </p>
           <p className="mt-2 font-medium text-slate-200">{siteConfig.name}</p>
           <p className="mt-1 text-sm text-slate-400">{siteConfig.shortDescription}</p>
         </div>
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-slate-500">
             Share
           </p>
           <div className="flex gap-3">
@@ -61,7 +60,7 @@ export function ArticleFooter({ title, slug }: ArticleFooterProps) {
           </div>
         </div>
       </div>
-      <div className="relative mt-8 border-t border-white/8 pt-8">
+      <div className="mt-8 border-t border-white/8 pt-8">
         <div className="flex flex-wrap gap-4">
           <ButtonLink href="/blog">View all insights</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">

@@ -61,16 +61,15 @@ export default function BlogPage() {
             const FeaturedArticle = () => (
               <article
                 className={cn(
-                  "section-surface noise-overlay group relative overflow-hidden rounded-4xl p-8 shadow-[0_20px_80px_rgba(5,10,30,0.35)] sm:p-10",
+                  "theme-card group relative overflow-hidden rounded-xl p-8 sm:p-10",
                   hasArticlePage(featuredPost.slug) &&
-                    "transition duration-400 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(103,232,249,0.08),0_20px_80px_rgba(5,10,30,0.35)]"
+                    "transition duration-300 hover:border-[#ffd700]/30"
                 )}
               >
-                <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-fuchsia-500/16 blur-3xl" />
                 <div className="relative">
                   <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
+                      <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">
                         Featured Article
                       </p>
                       <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -83,8 +82,8 @@ export default function BlogPage() {
                   </header>
 
                   <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
-                    <div className="rounded-[1.9rem] bg-[linear-gradient(135deg,rgba(34,211,238,0.16),rgba(139,92,246,0.16),rgba(217,70,239,0.2))] p-5 shadow-[0_20px_70px_rgba(8,12,30,0.38)]">
-                      <div className="flex min-h-80 flex-col justify-between rounded-[1.65rem] border border-white/15 bg-slate-950/60 p-5 backdrop-blur-sm">
+                    <div className="rounded-xl border border-white/10 bg-black p-5">
+                      <div className="flex min-h-80 flex-col justify-between rounded-lg border border-white/10 bg-black p-5">
                         <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.28em] text-white/65">
                           <span>Featured</span>
                           <span>Design · SEO · Growth</span>
@@ -145,7 +144,7 @@ export default function BlogPage() {
       <SectionShell>
         <Reveal blur>
           <div className="mb-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#ffd700]">
               Latest Articles
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
