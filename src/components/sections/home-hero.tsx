@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { HeroVisual } from "@/components/visuals/hero-visual";
+import { HeroVisualMobile } from "@/components/visuals/hero-visual-mobile";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 
@@ -12,7 +13,26 @@ export function HomeHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <SectionShell className="pb-10 pt-10 sm:pb-14 sm:pt-14 lg:pt-20">
+    <div className="relative overflow-hidden">
+      <div aria-hidden className="hero-depth-gradient pointer-events-none absolute inset-0" />
+      <div aria-hidden className="hero-depth-grid pointer-events-none absolute inset-0 opacity-50" />
+      <div aria-hidden className="space-stars pointer-events-none absolute inset-0 opacity-60" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-[#e91e8c]/12 blur-3xl"
+        style={{ animation: "float 13s ease-in-out infinite" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 -top-8 h-56 w-56 rounded-full bg-[#2563eb]/10 blur-3xl"
+        style={{ animation: "float 17s ease-in-out infinite 2.5s" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-[#ffd700]/8 blur-3xl"
+        style={{ animation: "float 20s ease-in-out infinite 5s" }}
+      />
+      <SectionShell className="relative pb-10 pt-10 sm:pb-14 sm:pt-14 lg:pt-20">
       <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14">
         <div className="min-w-0 max-w-3xl">
           <motion.p
@@ -54,11 +74,15 @@ export function HomeHero() {
             content, SEO, and social systems that keep brands visible after launch.
           </motion.p>
 
+          <div className="mt-5 lg:hidden">
+            <HeroVisualMobile reduceMotion={!!reduceMotion} />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0.01 : 0.45, delay: reduceMotion ? 0 : 0.28, ease: easeOut }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4"
+            className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
             <ButtonLink href="/contact" arrow className="w-full justify-center sm:w-auto">
               Start Your Project
@@ -97,6 +121,7 @@ export function HomeHero() {
           <HeroVisual reduceMotion={!!reduceMotion} />
         </div>
       </div>
-    </SectionShell>
+      </SectionShell>
+    </div>
   );
 }

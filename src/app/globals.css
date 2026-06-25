@@ -126,9 +126,9 @@ select {
 
 .hero-depth-gradient {
   background:
-    radial-gradient(circle at 18% 16%, rgba(233, 30, 140, 0.2), transparent 28%),
-    radial-gradient(circle at 84% 18%, rgba(37, 99, 235, 0.16), transparent 26%),
-    radial-gradient(circle at 52% 82%, rgba(255, 215, 0, 0.1), transparent 24%);
+    radial-gradient(circle at 18% 16%, rgba(233, 30, 140, 0.38), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(37, 99, 235, 0.3), transparent 26%),
+    radial-gradient(circle at 52% 82%, rgba(255, 215, 0, 0.2), transparent 24%);
   animation: hero-gradient-drift 22s ease-in-out infinite alternate;
   will-change: transform, opacity, filter;
 }
@@ -329,4 +329,15 @@ select {
   margin-top: 0.75rem;
   background: linear-gradient(90deg, rgba(233, 30, 140, 0.65), rgba(255, 215, 0, 0.5));
   border-radius: 1px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-18px) scale(1.03);
+  }
 }
