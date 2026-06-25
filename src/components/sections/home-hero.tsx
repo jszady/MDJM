@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { HeroVisual } from "@/components/visuals/hero-visual";
-import { HeroVisualMobile } from "@/components/visuals/hero-visual-mobile";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 
@@ -74,15 +73,11 @@ export function HomeHero() {
             content, SEO, and social systems that keep brands visible after launch.
           </motion.p>
 
-          <div className="mt-5 lg:hidden">
-            <HeroVisualMobile reduceMotion={!!reduceMotion} />
-          </div>
-
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0.01 : 0.45, delay: reduceMotion ? 0 : 0.28, ease: easeOut }}
-            className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
             <ButtonLink href="/contact" arrow className="w-full justify-center sm:w-auto">
               Start Your Project
