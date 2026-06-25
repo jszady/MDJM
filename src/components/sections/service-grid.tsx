@@ -54,8 +54,11 @@ export function ServiceGrid({ compact = false, className }: ServiceGridProps) {
                   <p className="mt-3 text-sm leading-7 text-slate-400">{service.short}</p>
 
                   <ul className="mt-5 space-y-2 text-sm text-slate-400">
-                    {service.benefits.slice(0, compact ? 2 : 3).map((item) => (
-                      <li key={item} className="flex gap-2.5 leading-6">
+                    {service.benefits.slice(0, compact ? 2 : 3).map((item, benefitIndex) => (
+                      <li
+                        key={item}
+                        className={`flex gap-2.5 leading-6${benefitIndex === 2 ? " hidden sm:flex" : ""}`}
+                      >
                         <span className="shrink-0 font-bold text-[#ffd700]">—</span>
                         <span>{item}</span>
                       </li>

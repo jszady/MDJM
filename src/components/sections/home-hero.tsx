@@ -38,7 +38,17 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduceMotion ? 0.01 : 0.5, delay: reduceMotion ? 0 : 0.18, ease: easeOut }}
-            className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8"
+            className="mt-5 block max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:hidden sm:leading-8"
+          >
+            We design high-conversion websites and run the SEO, content, and social that keep
+            Toronto brands visible.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: reduceMotion ? 0.01 : 0.5, delay: reduceMotion ? 0 : 0.18, ease: easeOut }}
+            className="mt-5 hidden max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:block sm:leading-8"
           >
             We design high-conversion websites, build premium digital experiences, and run the
             content, SEO, and social systems that keep brands visible after launch.
@@ -53,10 +63,34 @@ export function HomeHero() {
             <ButtonLink href="/contact" arrow className="w-full justify-center sm:w-auto">
               Start Your Project
             </ButtonLink>
-            <ButtonLink href="/services" variant="secondary" className="w-full justify-center sm:w-auto">
-              Explore Services
+            <ButtonLink href="/work" variant="secondary" className="w-full justify-center sm:w-auto">
+              See Our Work
             </ButtonLink>
           </motion.div>
+
+          <p className="mt-4 text-center text-xs text-slate-500 lg:hidden">
+            No commitment · We reply within 24 hours
+          </p>
+
+          <div className="mt-6 lg:hidden">
+            <div className="h-[2px] w-12 bg-[#e91e8c]" />
+            <div className="theme-card mt-3 flex items-stretch divide-x divide-white/10 px-4 py-4">
+              <div className="flex-1 text-center">
+                <p className="text-xl font-bold text-white">47+</p>
+                <p className="mt-1 text-[10px] uppercase tracking-widest text-[#e91e8c]">Brands</p>
+                <p className="text-[10px] uppercase tracking-widest text-[#e91e8c]">Launched</p>
+              </div>
+              <div className="flex-1 text-center">
+                <p className="text-xl font-bold text-white">5★</p>
+                <p className="mt-1 text-[10px] uppercase tracking-widest text-[#ffd700]">Rated</p>
+              </div>
+              <div className="flex-1 text-center">
+                <p className="text-xl font-bold text-white">24h</p>
+                <p className="mt-1 text-[10px] uppercase tracking-widest text-[#2563eb]">Reply</p>
+                <p className="text-[10px] uppercase tracking-widest text-[#2563eb]">Time</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="hidden lg:block">

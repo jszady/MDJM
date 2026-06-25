@@ -24,7 +24,13 @@ export function WhyMjdm() {
 
         <div className="grid gap-3">
           {reasons.map((reason, index) => (
-            <Reveal key={reason} delay={index * 0.06} direction="right" blur>
+            <Reveal
+              key={reason}
+              delay={index * 0.06}
+              direction="right"
+              blur
+              className={index >= 3 ? "hidden sm:block" : undefined}
+            >
               <div className="theme-card rounded-xl px-5 py-4 text-slate-300">
                 <span className={`mr-3 inline-block min-w-8 font-bold ${numberColors[index % numberColors.length]}`}>
                   0{index + 1}
