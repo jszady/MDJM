@@ -4,6 +4,16 @@ import { FormEvent, useState } from "react";
 
 import { services } from "@/data/services";
 
+declare global {
+  function gtag(...args: unknown[]): void;
+}
+
+function fireContactConversion() {
+  if (typeof gtag !== "undefined") {
+    gtag("event", "ads_conversion_Contact_Us_1", { event_timeout: 2000 });
+  }
+}
+
 type ContactFormValues = {
   name: string;
   company: string;
@@ -48,6 +58,7 @@ export function ContactForm() {
         throw new Error(payload.message || "Something went wrong.");
       }
 
+      fireContactConversion();
       setStatus("success");
       setFeedback(payload.message || "Your inquiry has been sent.");
       setValues(initialValues);
