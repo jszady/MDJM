@@ -96,6 +96,23 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18273217314"
+        />
+        <Script
+          id="google-tag-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18273217314');
+            `
+          }}
+        />
       </body>
     </html>
   );
